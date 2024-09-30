@@ -1,0 +1,402 @@
+body {
+    min-height: 100vh;
+    background-image: url("/images/background.jpg");
+    /* background-size: 750%; */
+    background-position: cover;
+    background-repeat: no-repeat;
+    /* height: 100%; */
+}
+main {
+    margin-bottom: 25rem;
+}
+a>i:hover {
+    color: rgb(27, 121, 214);
+    transform: scale(1.125);
+}
+
+.pageone {
+    background-image: url("/images/english_sillhouette.jpeg");
+    height: 30vh;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    margin-top: -1rem;
+}
+
+.container {
+    height: 33vh;
+}
+
+.top-container{
+    display: grid;
+    grid-gap: 15px;
+    grid-template-areas: 
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b'
+    'showmap showmap showmap';
+    padding-top: 10px;
+    font-family: 'Arial', cursive;
+    color: #41533b;
+    /* text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3); */
+}
+  
+.top-container a {
+    background-color: #41533b;
+}
+
+/* showcase */
+.showcase{
+    grid-area: showcase;
+    min-height: 400px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05), 
+      rgba(255, 255, 255, 0.05)), url('/images/beer_barrel.jpg');
+    background-size: cover;
+    background-position: bottom;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 1px rgba(68, 83 , 59, 0.3);
+    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 1);
+}
+.showcase h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--light);
+}
+  
+.showcase p{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--light);
+}
+
+.top-box{
+    background: #ddd;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    border-radius: 7px;
+    color: var(--light);
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 1);
+}
+
+.top-box .price{
+    font-size: 2.5rem;
+  }
+  
+.top-box-a{
+    grid-area: top-box-a;
+    background: url('/images/hartington_peak.jpg');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.top-box-b{
+    grid-area: top-box-b;
+    background: url('/images/inside_pub_peak1.jpg');
+    background-size: cover;
+}
+
+.showmap {
+    grid-area: showmap;
+    display: grid;
+}
+.mapstyleh {
+    width: 100%;
+    height: 55vh;
+  }
+
+.boxes{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    color: #41533b;
+}
+
+.box{
+    background: #f9f9f9;
+    text-align: center;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border-radius: 7px;
+    box-shadow: rgba(68, 83, 59, 0.15) 0px 15px 25px,
+                    rgba(68, 83, 59, 0.05) 0px 5px 10px;
+}
+
+.hh1 {
+    font-size: 3.5rem;
+}
+.hh2 {
+    font-size: 3rem;
+}
+.hh3 {
+    font-size: 2.5rem;
+}
+.hh4 {
+    font-size: 2rem;
+}
+.hh5 {
+    font-size: 1.5rem;
+}
+.hh6 {
+    font-size: 1.25rem;
+}
+
+.info{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    font-family: 'Arial', cursive;
+    color: #41533b;
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+.woodlandgreen {
+    background-color: #41533b;  
+}
+.woodlandgreen:hover {
+    color: darkslategrey;
+}
+.work {
+    font-family: 'Work Sans', cursive;
+}
+.tdn {
+    text-decoration: none;
+}
+.txt-shad {
+    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
+}
+.txt-lshad {
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+
+
+/* ##Device = Desktops */
+@media (min-width: 1281px) {
+    body {
+        background-size: 250%;
+      }
+}
+
+/*  ##Device = Laptops, Desktops  */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    body {
+        background-size: 450%;
+      }
+}
+
+/* ##Device = Tablets, Ipads (portrait)  */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    body {
+        background-size: 650%;
+      }
+      footer {
+          margin-top: 25rem;
+      }
+    .boxes{
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .hh1 {
+        font-size: 3rem;
+    }
+    .hh2 {
+        font-size: 2.5rem;
+    }
+    .hh3 {
+        font-size: rem;
+    }
+    .hh4 {
+        font-size: 2rem;
+    }
+    .hh5 {
+        font-size: 1.5rem;
+    }
+    .hh6 {
+        font-size: 1.25rem;
+    }
+
+}
+
+/* ##Device = Tablets, Ipads (landscape)  */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    body {
+        background-size: 505%;
+    }
+    .boxes{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        color: #41533b;
+    }
+    footer {
+        margin-top: 100rem;
+        /* position: relative; */
+    }
+    .hh1 {
+        font-size: 3rem;
+    }
+    .hh2 {
+        font-size: 2.5rem;
+    }
+    .hh3 {
+        font-size: rem;
+    }
+    .hh4 {
+        font-size: 2rem;
+    }
+    .hh5 {
+        font-size: 1.5rem;
+    }
+    .hh6 {
+        font-size: 1.25rem;
+    }
+}
+
+/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        background-size: 700%;
+    }
+    /* .container,
+    .top-container,
+    nav ul,
+    .showcase,
+    .top-box {
+        display: block;
+        margin-bottom: 1rem;
+    } */
+    .boxes{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        color: #41533b;
+    }
+    .box {
+        display: block;
+        padding-bottom: 1rem;
+    }
+    .boxy {
+        display: block;
+        margin-bottom: 10px;
+    }
+    nav {
+        padding-bottom: 1rem 0;
+    }
+    footer{
+        margin-top: 1500%;
+        position: sticky;
+        bottom: -225%;
+    }
+    .margt {
+    margin-top: 10rem;
+    position: relative;
+    }
+    .showcase h1{
+        font-size: 2.5rem;
+    }
+    .hh1 {
+        font-size: 2rem;
+    }
+    .hh2 {
+        font-size: 1.5rem;
+    }
+    .hh3 {
+        font-size: rem;
+    }
+    .hh4 {
+        font-size: 1.25rem;
+    }
+    .hh5 {
+        font-size: 1.125rem;
+    }
+    .hh6 {
+        font-size: 1rem;
+    }
+  
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    body {
+        background-size: 1100%;
+    }
+    a .btn {
+        font-size: 0.5rem;
+    }
+    .container,
+    .top-container,
+    /* nav ul, */
+    .showcase,
+    .top-box {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    .boxes{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+        color: #41533b;
+    }
+    .box {
+        display: block;
+        padding-bottom: 1rem;
+    }
+
+    .boxy {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    footer{
+        /* margin-top: 150rem; */
+        margin-bottom: -40rem;
+        /* position: absolute; */
+    }
+
+    .showcase h1{
+        font-size: 2.5rem;
+    }
+
+    .hh1 {
+        font-size: 2rem;
+    }
+    .hh2 {
+        font-size: 1.5rem;
+    }
+    .hh3 {
+        font-size: rem;
+    }
+    .hh4 {
+        font-size: 1.25rem;
+    }
+    .hh5 {
+        font-size: 1.125rem;
+    }
+    .hh6 {
+        font-size: 1rem;
+    }
+
+    .homhbott {
+    display: flexbox;
+    }
+
+}
+
+@media (min-width: 200px) and (max-width: 319px){
+
+} 

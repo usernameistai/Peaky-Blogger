@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') %>
+
+    <div id="map" class="rounded mb-3 pb-shadow mapstyle" ></div>
+    <h1 class="pb-col">All Walks <i class="fa-solid fa-person-hiking"></i></h1>
+    <h4><a href="/walks/new" class="text-decoration-none bold">Add A New Walk</a></h4>
+    <div>
+        <% for(let walk of walks) { %>
+            <div class="card rounded mb-1 pb-shadow">
+                <div class="row">
+                    <div class="col-md-4">
+                        <% if(walk.images.length) { %>
+                            <img class="img-fluid rounded object-fit-cover" alt="" src="<%=walk.images[0].url%>">
+                        <% } else { %>
+                            <img class="img-fluid rounded object-fit-cover" src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" alt="" srcset="">
+                        <% } %>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title pb-col"><i class="fas fa-tree"></i> <%= walk.title %> <i class="fas fa-utensils"></i></h5>
+                            <p class="card-text"><%= walk.description.substring(0, 110) %></p>
+                            <p class="card-text">
+                                <small class="text-muted"><%= walk.location%></small>
+                            </p>
+                            <a class="btn btn-outline-info text-secondary" href="/walks/<%=walk._id%>">View <%=walk.title%></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <script>
+        const mapToken = `<%- process.env.MAPBOX_TOKEN %>`; 
+        const walks =  {features: <%- JSON.stringify(walks) %>};
+    </script>
+    <script src="/javascripts/clusterMap.js"></script>
+    

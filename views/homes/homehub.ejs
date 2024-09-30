@@ -1,0 +1,102 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="stylesheet" href="/stylesheets/homehub.css">
+
+        <header>
+            <div class="container rounded mx-auto p-5 pageone pb-shadow animate__animated animate__fadeIn">
+                <h2 class="ms-0 me-0 mt-1 pb-0" style="color: #41533b;">
+                    <div class="row">
+                        <div><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i></div>
+                        <div class="txt-shad bold">Peaky Blogger's guide to Food and Adventure</div>
+                    </div>
+                </h2>
+                <p class="pb-col text-center pb-3">Look no further than the <strong>Homehub</strong>, for all your walking and eating needs</p>
+            </div>
+        </header>
+        <div class="mt-5">
+			<section class="top-container text-white">
+				<header class="showcase pb-shadow animate__animated animate__slideInLeft">
+					<h1>Pubs and Restaurants in the Peak District<h1>
+					<p>My Blogs and Experiences</p>
+					<a href="/walks" class="btn btn-outline-info work bold text-white">Look for them here</a>
+				</header>
+				<div class="top-box top-box-a pb-shadow animate__animated animate__slideInRight">
+					<p class="hh4">Favourite areas of the Peak District</p>
+					<!-- <p class="price">Places / Walks</p> -->
+					<a href="/walks" class="btn btn-outline-info work bold text-white">More info</a>
+				</div>
+				<div class="top-box top-box-b pb-shadow animate__animated animate__slideInRight">
+					<p class="hh3">Gallery</p>
+					<p class="price"></p>
+					<a href="/gallery" class="btn btn-outline-info work bold text-white">Look for them here</a>
+				</div>
+				<div class="showmap animate__animated animate__fadeIn">
+					<div id="map" class="rounded mb-3 pb-shadow mapstyleh" ></div>
+				</div>
+			</section><br>
+            <!-- boxes section-->
+			<section class="boxes">
+				<div class="box shadow animate__animated animate__fadeInLeft">
+					<i class="fas fa-tint fa-3x"></i> <i class="fa-solid fa-tree fa-3x"></i> <i class="fa-solid fa-person-hiking fa-3x"></i> <i class="fa-solid fa-utensils fa-3x"></i> <i class="far fa-sun fa-3x"></i>
+					<p class="hh4">About</p>
+					<p class="hh6">Brief self-synopsis and aim of the site</p>
+					<a href="/about" class="btn btn-lg onh pb-col"><i class="fa-regular fa-address-card fa-2x"></i> <i class="fa-solid fa-book-journal-whills fa-2x"></i></a>
+				</div>
+				<div class="box shadow animate__animated animate__fadeInRight">
+					<i class="fa-solid fa-tree fa-3x"></i> <i class="fa-brands fa-skyatlas fa-3x"></i>  <i class="fa-solid fa-tree-city fa-3x"></i> 
+					<p class="hh4">Peak District</p>
+					<p class="hh6">Some events in the Peak District calendar here</p>
+					<a href="https://visitpeakdistrict.com/events" class="btn btn-lg onh pb-col"><i class="fa-regular fa-calendar fa-2x"></i></a>
+				</div>
+				<div class="box shadow animate__animated animate__fadeInLeft">
+					<i class="fab fa-youtube fa-3x"></i>
+					<p class="hh4">V-log YouTube</p>
+					<p class="hh6">Some of my v-logs from my walks</p>
+					<a href="https://www.youtube.com/user/DavidBattye" class="btn btn-lg onh pb-col"><i class="fab fa-square-youtube fa-2x"></i></a>
+				</div>
+				<div class="box shadow animate__animated animate__fadeInRight">
+					<i class="fa-solid fa-envelope fa-3x"></i>
+					<p class="hh4">Contact Me</p>
+					<p class="hh6">Click here to send me a message via email or socials</p>
+					<a href="/contact" class="btn btn-lg onh pb-col"><i class="fa-regular fa-envelope fa-2x"></i></a>
+				</div>
+			</section><br>
+
+			<section class="info rounded pb-shadow">
+				<img src="images/studland_building_pb_villa.jpg" class="img-fluid rounded">
+				<p class="h2 mt-0 align-items-top txt-lshad">Top restaurants and places to eat in the Peak District</p><br>
+                <a class="text-center text-decoration-none pb-col loh txt-lshad" href="https://www.tripadvisor.co.uk/Restaurants-g2360580-Peak_District_England.html">
+                    <i class="fa-solid fa-person-hiking fa-2x"></i> <i class="fa-solid fa-mountain fa-2x"></i> <i class="fa-solid fa-tree fa-2x"></i> <i class="fa-solid fa-utensils fa-2x"></i>
+                </a>
+				<p class="pb-col txt-shad bold">Some of these places I've visited, others I haven't, <a class="tdn" href="/walks-map">see here <i class="fa-solid fa-map-location-dot fa-2x pb-col"></i></a></p>
+				<a href="https://www.tripadvisor.co.uk/Restaurants-g2360580-Peak_District_England.html" class="btn btn-lg btn-outline-info mt-2 work woodlandgreen text-white">More Info - Trip Advisor</a>
+			</section><br>
+
+
+			
+			<section class="homhbott">
+				<div class="d-flex mb-5 mx-auto">
+					<div class="card p-3 pb-shadow col mx-auto">
+						<img class="card-img-top rounded" src="images/pdnpa-map.jpg" >
+						<div class="card-body p-2">
+							<h6 class="card-title">Peak District Map (sourced below) </h6>
+							<a href="https://www.peakdistrict.gov.uk/visiting/planning-your-visit/maps/pdmap" class="btn btn-outline-info woodlandgreen text-white">P-D National Park</a>
+						</div>
+					</div>
+					<br />
+					<div class="card p-3 pb-shadow col mx-auto">
+						<img class="card-img-top rounded" src="images/english_combine_harvester.jpeg" >
+						<div class="card-body p-2">
+							<h6 class="card-title">Or just want a lazy pub day? (Less walking ahem...)</h6>
+							<a href="https://great-british-pubs.co.uk/inspire/beer-garden/" class="btn btn-outline-info woodlandgreen text-white">Lazy Days</a>
+						</div>
+					</div>
+				</div>
+			</section>
+        </div>
+
+		<script>
+			const mapToken = `<%- process.env.MAPBOX_TOKEN %>`; 
+			const walks =  {features: <%- JSON.stringify(walks) %>};
+		</script>
+		<script src="/javascripts/clusterMap.js"></script>

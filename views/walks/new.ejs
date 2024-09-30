@@ -1,0 +1,50 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="pb-shadow rounded p-3 m-0 row pb-col">
+        <h1 class="text-center pt-1"><i class="fa-solid fa-person-hiking"></i> New <i class="fa-solid fa-tree"></i> Walk <i class="fa-solid fa-mountain-sun"></i></h1> 
+        <form action="/walks" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Title</label>
+                <input  class="form-control"type="text" name="walk[title]" id="title" required>
+                <div class="valid-feedback">
+                    Looking good! Nice name...
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" name="walk[location]" id="location" required>
+                <div class="valid-feedback">
+                    Looking good! Nice location...
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Walk Price / Meal and Beers Cost</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">£</span>
+                    <input type="number" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="walk[price]" required>
+                    <div class="valid-feedback">
+                        Looking good! Nice pricing...
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="walk[description]" required></textarea>
+                <div class="valid-feedback">
+                    Looking good! Nice description of your time...
+                </div>
+            </div>
+              <div class="mb-3 custom-file">
+                <label for="image" class="form-label custom-file-label">Image(s) <i class="fa-solid fa-cloud-arrow-up"></i></label>
+                <div class="d-flex input-group">
+                    <input class="form-control custom-file-input" type="file" name="image" id="image" aria-describedby="image" multiple>
+                    <span class="input-group-text" id="image"><i class="fa-regular fa-images pb-col"></i></span>
+                </div>
+            </div>
+            <div class="my-3 d-grid gap-2 mx-auto pb-shadow">
+                <button class="btn btn-info text-white pb-shadow">Add Walk</button>
+            </div>
+            <div><a class="btn btn-sm btn-outline-secondary mb-3 pb-shadow w25" href="/walks">All Walks</a></div>
+        </form>
+    </div>

@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg mt-0 z-idx" data-bs-theme="info" id="pb-color">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold mx-4 mb-0 pb-title pb-col" href="/"><i class="fa-solid fa-tree"></i><i class="fa-solid fa-utensils"></i> <sub>Peaky Blogger |</sub></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 h6">
+          <li class="nav-item">
+            <a class="nav-link pb-col bold" aria-current="page" href="/homehub"><i class="fa-solid fa-house-chimney-user pb-col"></i> HomeHub</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pb-col bold" href="/walks"><i class="fa-solid fa-person-hiking pb-col"></i> Walks</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle pb-col bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Walk
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item pb-col bold" href="/walks/new">New Walk</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item pb-col bold" href="/gallery">Walks & Pubs Gallery</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item pb-col bold" href="/walks-map">Map of My Walks</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item pb-col bold" href="/about">About</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item pb-col bold" href="/contact">Contact Me</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item pb-col bold" href="https://www.rohan.co.uk/">Rohan Outdoor Wear</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item pb-col bold" href="https://www.peakdistrict.gov.uk/">Peak District National Park</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="input-group w25 mx-2" role="search">
+          <span class="input-group-text text-secondary">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input class="form-control me-2" type="search" placeholder="Search for a walk" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="navbar-nav justify-content-end pe-3 d-flex h6">
+          <% if(!currentUser) { %>
+            <a class="nav-link pb-col bold" href="/login"><i class="fa-solid fa-right-to-bracket pb-col"></i> Login</a>
+            <a class="nav-link pb-col bold" href="/signup"><i class="fa-solid fa-user-plus pb-col"></i> Sign Up</a>
+          <% } else { %>
+            <h5 class="my-auto me-2 mt-1 mx-1"><div class="text-white">Welcome <%=currentUser.username %></div></h5>
+            <a class="nav-link pb-col bold" href="/logout"><i class="fa-solid fa-right-from-bracket pb-col"></i> Logout</a>
+          <% } %>
+        </div>
+      </div>
+      
+    </div>
+  </nav>

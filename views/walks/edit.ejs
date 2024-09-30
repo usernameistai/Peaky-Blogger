@@ -1,0 +1,67 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="pb-shadow rounded p-3 m-0 mb-3 row pb-col">
+        <h1 class="text-center"><i class="fa-solid fa-mountain-city"></i> Edit <i class="fa-solid fa-tree"></i> Walk <i class="fa-solid fa-person-hiking"></i></h1>
+        <div class="">
+            <form action="/walks/<%=walk._id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" name="walk[title]" id="title" value="<%=walk.title%>" required>
+                    <div class="valid-feedback">
+                        Looking good! Nice name...
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" name="walk[location]" id="location" value="<%=walk.location%>" required>
+                    <div class="valid-feedback">
+                        Looking good! Nice location...
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="price">Walk Price / Meal and Beers Cost</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="price-label">£</span>
+                        <input type="number" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                            aria-describedby="price-label" name="walk[price]" value="<%=walk.price%>" required>
+                        <div class="valid-feedback">
+                            Looking good! Nice price...
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description"
+                        name="walk[description]" required><%=walk.description%></textarea>
+                    <div class="valid-feedback">
+                        Looking good! Nice description...
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Add Image(s) <i class="fa-solid fa-cloud-arrow-up"></i></label>
+                    <div class="d-flex input-group">
+                        <input class="form-control" type="file" name="image" id="image" aria-describedby="image" multiple>
+                        <span class="input-group-text" id="image"><i class="fa-regular fa-images pb-col"></i></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <% walk.images.forEach((img, i) => { %>
+                        <img src="<%= img.thumbnail %>" class="img-fluid img-thumbnail w25" alt="" srcset="">
+                        <div class="form-check-inline d-inline-block align-top">
+                            <input type="checkbox" class="form-check-input" name="deleteImages[]" id="image-<%=i%>" value="<%=img.filename%>">
+                            <label class="form-check-label" for="image-<%=i%>"><button class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button></label>
+                        </div>
+                        
+                    <% }) %>
+                </div>
+                <div class="my-3 d-grid gap-2 mx-auto pb-shadow">
+                    <button class="btn btn-info text-white pb-shadow">Update Walk</button>
+                </div>
+                <div class="d-flex gap-5">
+                    <a class="btn btn-sm btn-outline-secondary pb-shadow ms-auto px-5" href="/walks/<%=walk._id%>"><%=walk.title%></a>
+                    <a class="btn btn-sm btn-outline-secondary pb-shadow me-auto px-5" href="/walks">All Walks</a>
+                </div>
+            </form>
+        </div>
+    </div>

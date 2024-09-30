@@ -1,0 +1,18 @@
+body {
+    min-height: 100vh;
+    background-image: url("/images/background.jpg");
+    background-size: 150%;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+footer {
+    margin-top: 1rem;
+    position: absolute;
+}
+.login {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+}
+.gallerytop {
+  border-top-left-radius: 5px 5px;
+  border-top-right-radius: 5px 5px;
+}

@@ -1,0 +1,35 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/user.css">
+    <div class="pb-shadow rounded mb-5 login">
+        <img src="images/english_sillhouette.jpeg" class="gallerytop card-img-top" alt="" srcset="">
+        <h1 class="mb-3 p-3 pb-col"><i class="fa-solid fa-right-to-bracket"></i> Login </h1>
+        <form action="/login" method="POST" class="validated-form p-3" novalidate>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                    <div class="input-group">
+                    <input type="text" class="form-control" id="username" name="username" autofocus required>
+                    <span class="input-group-text text-secondary">
+                         Please enter here
+                    </span>
+                </div>
+                <div class="valid-feedback">
+                    Looking good, nice choice!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <span class="input-group-text text-secondary">
+                        Don't let anyone see...
+                    </span>
+                </div>
+                <div class="valid-feedback">
+                    No idea what your password is, make it a good one
+                </div>
+            </div>
+            <div class="d-grid gap-2 pb-shadow">
+                <button class="btn btn-outline-info">Log In</button>
+            </div>
+        </form>
+    </div>

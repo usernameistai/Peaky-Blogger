@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/gallery.css">
+
+    <div class="rounded mx-auto p-5 pageoneone pb-shadow">
+        <div class=" mt-1 pb-0 pb-col mb-3">
+            <h1 class="txt-shad"><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i> Peaky Blogger's Gallery <sup><i class="fa-regular fa-images fa-2x"></i></sup></h1>
+            <p class="pb-col text-center pb-3 mb-3">Photos and images from <a class="tdn bold" href="/homehub">The Peaky Blogger</a></p>
+        </div>
+        
+    </div>
+
+    <div class="mx-auto">
+        <% for(let walk of walks) { %>
+            <div class="card mb-1 pb-shadow d-inline-block">
+                <% if(walk.images.length) { %>
+                    <div class="rounded">
+                        <img class="img-fluid gallery gallerytop" alt="" src="<%=walk.images[0].url%>">
+                        <a class="ms-2 tdn pb-col bold mx-auto onh" href="/walks/<%=walk._id%>"><%=walk.title.substring(0, 20)%></a>
+                    </div>
+                <% } else { %>
+                    <img class="img-fluid rounded" src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" alt="" srcset="">
+                <% } %>
+            </div>
+        <% } %>
+    </div>

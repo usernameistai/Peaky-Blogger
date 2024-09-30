@@ -1,0 +1,87 @@
+body {
+    height: 100vh;
+    background-image: url("/images/background.jpg");
+    background-size: 150%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+footer {
+    margin-top: -50rem;
+    position: relative;
+    bottom: -110%;
+}
+.pageoneone { 
+    background-image: url("/images/english_sillhouette.jpeg");
+    height: 25vh;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+.gallery {
+    display: flex;
+    /* width: 32.914%; */
+    height: 17.5vh;
+}
+.gallerytop {
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+}
+.tdn {
+    text-decoration: none;
+}
+.onh:hover {
+    color: rgb(27, 121, 214);
+}
+.bold {
+    font-weight: 550;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////// MEDIA /////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+  /* 
+    ##Device = Desktops */
+@media (min-width: 1281px) {
+  
+}
+
+/*  ##Device = Laptops, Desktops  */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+}
+
+/* ##Device = Tablets, Ipads (portrait)  */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+/* ##Device = Tablets, Ipads (landscape)  */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+}
+
+/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .footer{
+    margin-top: auto;
+    margin-bottom: -100rem;
+  }
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .footer{
+      /* display: grid; */
+      padding-top: 10px;
+      margin-top: auto;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 319px){
+  
+} 

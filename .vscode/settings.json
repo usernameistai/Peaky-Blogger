@@ -1,0 +1,50 @@
+{
+    "editor.fontFamily": "'Fira Code iScript', 'Fira Code-LightItalic', Menlo-LightItalic, Consolas-LightItalic, 'Courier New-LightItalic', monospace-LightItalic",
+    "workbench.colorTheme": "Cobalt Neon",
+    "workbench.iconTheme": "sweet-vscode-icons",
+    "editor.fontLigatures": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": [
+              //following will be in italic (=FlottFlott)
+              "comment",
+              "entity.name.type.class", //class names
+              "constant",
+              "keyword", //import, export, return…
+              "storage.modifier", //static keyword
+              "storage.type", //class keyword
+              "support.class.builtin",
+              "keyword.control",
+              "constant.language",
+              "entity.name.method.js",
+              "entity.name.class.js",
+              "entity.name.tag.doctype",
+              "entity.other.attribute-name",
+              "entity.name.method"
+            ],
+            "settings": {
+              "fontStyle": "italic"
+            }
+          },
+          {
+            "scope": [
+              //following will be excluded from italics (VSCode has some defaults for italics)
+              "invalid",
+              "keyword.operator",
+              "constant.numeric.css",
+              "keyword.other.unit.px.css",
+              "constant.numeric.decimal.js",
+              "constant.numeric.json"
+            ],
+            "settings": {
+              "fontStyle": ""
+            }
+          }
+        ]
+      },
+      "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "ejs": "html"
+      }
+}

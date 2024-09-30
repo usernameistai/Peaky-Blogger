@@ -1,0 +1,47 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/user.css">
+    <div class="pb-shadow rounded mb-5 login">
+        <img src="images/english_sillhouette.jpeg" class="gallerytop img-fluid" alt="" srcset="">
+        <div class="p-3">
+            <h1 class="mb-3 pb-col"><i class="fa-solid fa-user-plus"></i> Sign Up</h1>
+            <form action="/signup" method="POST" class="validated-form" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="username" name="username" autofocus required>
+                        <span class="input-group-text text-secondary">
+                            Make it unique AND interesting
+                        </span>
+                    </div>
+                    <div class="valid-feedback">
+                        Looking good, nice choice!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="valid-feedback">
+                        Looking good, nice prefix AND domain, great email
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" id="password" name="password" required>
+                        <span class="input-group-text text-secondary">
+                            Should be 8-20 characters long.
+                        </span>
+                    </div>
+                    <div class="valid-feedback">
+                        No idea what your password is, make it a good one
+                    </div>
+                </div>
+                <div class="d-grid gap-2 pb-shadow">
+                    <button class="btn btn-outline-info">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>

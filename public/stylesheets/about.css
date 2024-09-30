@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-image: url("/images/background.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+footer,
+.footer {
+    margin-top: 5rem;
+    position: absolute;
+}
+
+.walk_jumb {
+    background-image: url('/images/english_sillhouette.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 33vh;
+    padding: 2rem;
+    margin-top: -1rem;
+}
+.about {
+    box-sizing: border-box;
+}
+.wrappery{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+    'a a b'
+    'a a c'
+    'd e f';
+    padding-top: 10px;
+    font-family: 'Work Sans', cursive;
+    color: #41533b;
+}
+.boxy {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: #41533b;
+    color: #fff;
+    border-radius: 15px;
+    padding-bottom: 1rem;
+    font-size: 125%;
+    opacity: 0.88;
+    box-shadow: 0 3px 4px 2px rgba(68, 83 , 59, 0.3);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.boxy:hover::before {
+    content: '';
+    position: absolute;
+    width: 255px;
+    height: 255%;
+    background: linear-gradient(white, rgb(18, 156, 180));
+    animation: rotate 5s linear infinite;
+    z-index: -1;
+}
+.boxy:hover::after {
+    content: '';
+    position: absolute;
+    background: #41533b;
+    inset: 10px;
+    border-radius: 15px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.boxbtn {
+    transition: color 1.25s;
+    transition: scale() 1.25s;
+}
+.boxbtn:hover {
+    color: rgb(27, 121, 214);
+    transform: scale(1.25);
+}
+  
+.aa {
+    grid-area: a;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    z-index: 2;
+}
+.bb {
+    grid-area: b;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    z-index: 2;
+}  
+.cc {
+    grid-area: c;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    z-index: 2;
+}
+.dd {
+    grid-area: d;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    z-index: 2;
+}
+.ee {
+    grid-area: e;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    z-index: 2;
+}
+.ff {
+    grid-area: f;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* ##Device = Desktops */
+@media (min-width: 1281px) {
+    body {
+        background-size: 105% 125%;
+    }
+}
+
+/*  ##Device = Laptops, Desktops  */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    body {
+        background-size: 170%;
+    }
+}
+
+/* ##Device = Tablets, Ipads (portrait)  */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-size: 125%;
+    }
+}
+
+/* ##Device = Tablets, Ipads (landscape)  */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    body {
+        background-size: 225%;
+    }
+    .walk_jumb {
+        height: 30vh;
+    }
+}
+
+/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        background-size: 425%;
+    }
+    .container,
+    nav ul {
+        display: grid;
+        margin-bottom: 1rem;
+    }
+    .walk_jumb {
+        height: 35vh;
+    }
+    .wrapper, .wrappery {
+        display: grid;
+        margin-bottom: 10px;
+        row-gap: 10px;
+        column-gap: 10px;
+        grid-template-areas: 
+        'a'
+        'b'
+        'c'
+        'd'
+        'e'
+        'f';
+  }
+  nav {
+      padding-bottom: 1rem 0;
+  }
+  .footer{
+    display: inline-block;
+    padding-top: 10px;
+    margin-bottom: -10rem;
+  }
+  .margt {
+    margin-top: 10rem;
+    position: relative;
+  }
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
+@media (min-width: 320px) and (max-width: 480px) {
+    body {
+        background-size: 750%;
+    }
+    a .btn {
+        font-size: 0.5rem;
+    }
+    .walk_jumb {
+        height: 40vh;
+    }
+    .container,
+    nav ul{
+        display: grid;
+        margin-bottom: 1rem;
+    }
+    .wrapper, .wrappery {
+        display: grid;
+        margin-bottom: 10px;
+        row-gap: 10px;
+        column-gap: 10px;
+        grid-template-areas: 
+        'a'
+        'b'
+        'c'
+        'd'
+        'e'
+        'f';
+    }
+    .footer{
+        display: block;
+        padding-top: 10px;
+        margin-bottom: 0rem;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 319px){
+
+} 

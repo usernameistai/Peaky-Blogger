@@ -1,0 +1,183 @@
+body {
+    min-height: 100vh;
+    background-image: url('/images/english_sillhouette.jpeg');
+    background-size: 150%;
+    background-position: top;
+    margin: -1rem 0 0 0;
+    padding: 0;
+    width: 100%;
+}
+footer {
+      /* margin-top: 150vh; */
+    position: absolute;
+    bottom: auto;
+}  
+/* main {
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+.footer {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.container {
+    justify-content: center;
+    width: 100vw;
+    /* align-items: center; */
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, [col] 12rem);
+    grid-template-rows: repeat(auto-fill, [row] 12rem);
+    color: #444;
+}
+
+.back {
+    background-image: url('/images/english_combine_harvester.jpeg');
+    background-size: 105%;
+    background-position: bottom;
+    width: 100%;
+    height: 15rem;
+    border-radius: 2.5rem;
+    padding: 3rem;
+}
+
+.box {
+    background-color: #41533b;
+    color: #f9f9f9;
+    border-radius: 10px;
+    font-size: 150%;
+    opacity: 0.88;
+    box-shadow: 0 2px 4px 2px rgba(68, 83 , 59, 0.3);
+    grid-row-end: auto;
+    grid-row-start: auto;
+    padding: 1rem;
+    backdrop-filter: blur(20px);
+}
+
+.a {
+    grid-column: col  1 / span 2;
+    grid-row: row 1 / 3;
+
+}
+.b {
+    grid-column: col 3 / span 2 ;
+    grid-row: row 1 / 3;
+
+}
+.c {
+    grid-column: col / span ;
+    grid-row: row 2 / 3 ;
+}
+.d {
+    grid-column: col 2 / span 2 ;
+    grid-row: row 2 / 3 ;
+}
+.e {
+    grid-column: col 3 / span ;
+    grid-row: row 2 / 3;
+}
+.f {
+    grid-column: col / span 4;
+    grid-row: row 3;
+    margin-bottom: 3rem;
+    text-decoration: none;
+}
+
+.shadow {
+    color: #41533b;
+    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+}
+.b-col {
+    color: rgb(27, 121, 214);
+}
+.tdn {
+    text-decoration: none;
+}
+
+
+/* media */
+
+/* 
+##Device = Desktops */
+@media (min-width: 1281px) {
+    body,
+    .conatainer{
+        margin: 1rem auto;
+    }
+    .wrapper {
+    grid-template-columns: repeat(auto-fill, [col] 20rem);
+    grid-template-rows: repeat(auto-fill, [row] 13rem);
+    }
+}
+
+/*  ##Device = Laptops, Desktops  */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    body {
+        background-size: 300%;
+    }
+    .constainer {
+        margin: auto;
+    }
+    .wrapper {
+        grid-template-columns: repeat(auto-fill, [col] 15rem);
+        grid-template-rows: repeat(auto-fill, [row] 13rem);
+        }
+}
+
+/* ##Device = Tablets, Ipads (portrait)  */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-size: 500%;
+    }
+}
+
+/* ##Device = Tablets, Ipads (landscape)  */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        background-size: 500%;
+    }
+    .container{
+        display: block;
+        padding: 1rem;
+    }
+    .wrapper, .box {
+        display: block;
+        margin-bottom: 15px;
+        margin: 1rem auto;
+        max-width: 97%;
+    }
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
+@media (min-width: 320px) and (max-width: 480px) {
+    body {
+        background-size: 500%;
+    }
+    .container{
+        display: block;
+        padding: 1rem;
+    }
+    .wrapper,
+    .box {
+        display: block;
+        margin-bottom: 15px;
+        margin: 1rem auto;
+        max-width: 96%;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 319px){
+    body {
+        background-size: 500%;
+    }
+}

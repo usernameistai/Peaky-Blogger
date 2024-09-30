@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/walksmap.css">
+
+
+    <div id="map" class="rounded mb-3 pb-shadow mapstyleh" ></div>
+
+    <div class="d-flex mgt">
+        <a class="bold notd btn btn-outline-info pb-col mx-auto pb-shadow" href="/homehub">PeakyBlogger's Homehub</a>
+        <a class="bold notd btn btn-outline-info pb-col mx-auto pb-shadow" href="/walks">All Walks</a>
+        <a class="bold notd btn btn-outline-info pb-col mx-auto pb-shadow" href="/contact">Contact PeakyBlogger</a>
+    </div>
+
+
+
+    <script>
+        const mapToken = `<%- process.env.MAPBOX_TOKEN %>`; 
+        const walks =  {features: <%- JSON.stringify(walks) %>};
+    </script>
+    <script src="/javascripts/clusterMapB.js"></script>

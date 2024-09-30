@@ -1,0 +1,180 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-image: url("/images/background.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+}
+main {
+  margin-bottom: 25vh;
+}
+button:hover {
+  transform: scale(1.025);
+}
+.navbar, .footer {
+  background-color: rgb(18, 156, 180);
+}
+footer {
+  /* margin-top: 150vh; */
+  position: absolute;
+  bottom: -275%;
+}
+.pb-col {
+  color: #41533b;
+}
+#pb-col {
+  background-color: rgb(18, 156, 180);
+}
+.pb-title {
+  transform: scale(1.25);
+}
+.pb-shadow {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+               rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.w25 {
+  width: 25vw;
+}
+.w50 {
+  width: 50vw;
+}
+.w100 {
+  width: 100vw;
+}
+.margb {
+  margin-bottom: -1.25rem;
+}
+.bold {
+  font-weight: 550;
+}
+.thisway {
+  background-color: #41533b;
+  font-weight: 500;
+}
+.thisway:hover {
+  background-color: #41533b;
+  transform: scale(1.05);
+}
+.sub {
+  font-size: 3rem;
+}
+/* FROM GALLERY */
+/* .gallery {
+  display: flex;
+  width: 32.914%;
+}
+.gallerytop {
+  border-top-left-radius: 5px 5px;
+  border-top-right-radius: 5px 5px;
+} */
+.onh:hover {
+  color: rgb(27, 121, 214);
+}
+.notd {
+  text-decoration: none;
+}
+.tdn {
+  text-decoration: none;
+}
+.txt-shad {
+  text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
+}
+.txt-lshad {
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+.loh {
+  transition: color 1.5s;
+  transition: scale() 1.5s;
+}
+.loh:hover { /* LINK ON HOVER    */
+  transform: scale(1.2);
+  color: teal;
+}
+
+.z-idx {
+  z-index: 100;
+  position: sticky;
+}
+
+.mapstyle {
+  width: 100%;
+  height: 50vh;
+  margin-top: -1rem;
+}
+.mapstyleshow {
+  width: 100%; 
+  height: 33%;
+  margin-bottom: 0.75rem;
+}
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////// MEDIA /////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+  /* 
+    ##Device = Desktops */
+@media (min-width: 1281px) {
+  
+}
+
+/*  ##Device = Laptops, Desktops  */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+}
+
+/* ##Device = Tablets, Ipads (portrait)  */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+/* ##Device = Tablets, Ipads (landscape)  */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+}
+
+/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .container,
+  nav ul {
+      display: block;
+      margin-bottom: 1rem;
+  }
+  nav {
+      padding-bottom: 1rem 0;
+  }
+  footer{
+    margin-top: auto;
+    margin-bottom: -100rem;
+  }
+  /* .margt {
+    margin-top: 10rem;
+    position: relative;
+  } */
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  a .btn {
+      font-size: 0.5rem;
+  }
+  .container,
+  nav ul{
+      display: block;
+      margin-bottom: 1rem;
+  }
+  footer{
+      /* display: grid; */
+      padding-top: 10px;
+      margin-top: auto;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 319px){
+  
+} 
