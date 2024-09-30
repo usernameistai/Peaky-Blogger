@@ -29,6 +29,12 @@ footer {
     border-radius: 2.5rem;
     padding: 3rem;
 }
+.woodlandgreen {
+    background-color: #41533b;  
+}
+.woodlandgreen:hover {
+    color: darkslategrey;
+}
 
 /* .email {
     backdrop-filter: blur(7.5px);
