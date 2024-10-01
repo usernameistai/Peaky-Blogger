@@ -16,3 +16,44 @@ footer {
   border-top-left-radius: 5px 5px;
   border-top-right-radius: 5px 5px;
 }
+
+/* media */
+/* ##Device = Desktops */
+@media (min-width: 1281px) {
+
+}
+
+/*  ##Device = Laptops, Desktops  */
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+}
+
+/* ##Device = Tablets, Ipads (portrait)  */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* ##Device = Tablets, Ipads (landscape)  */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
+@media (min-width: 320px) and (max-width: 480px) {
+  body {
+    background-size: 250%;
+    background-position: top;
+  }
+  footer {
+    position: relative;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 319px){
+
+}

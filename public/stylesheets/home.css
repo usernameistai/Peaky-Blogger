@@ -105,7 +105,8 @@ body {
         background-size: 225%;
     }
     .home {
-        height: 80%;
+        height: 100%;
+        background-size: 125%;
     }
 }
 
@@ -115,8 +116,11 @@ body {
         background-size: 225%;
     }
     .home {
-        height: 75%;
+        height: 50vh;
         background-size: 125%;
+    }
+    .sub {
+        font-size: 1rem;
     }
 }
 
@@ -126,8 +130,23 @@ body {
         background-size: 300%;
     }
     .home {
-        height: 50%;
-        background-size: 200%;
+        height: 55%;
+        background-size: 250%;
+    }
+    .sub {
+        font-size: 1.25rem;
+    }
+    .text-white {
+        font-size: 1rem;
+    }
+    .logsig {
+        margin-top: 2rem;
+        height: 3rem;
+    }
+    .thisway {
+        border-radius: inherit;
+        padding: 3px;
+        margin-top: -5.5rem;
     }
 }
 
