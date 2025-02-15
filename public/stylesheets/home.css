@@ -26,10 +26,28 @@ body {
 .thisway {
     background-color: #41533b;
     font-weight: 500;
+    box-shadow: 1px 2px 4px 0px rgba(00, 00, 25, 1);
 }
 .thisway:hover {
-    background-color: #41533b;
-    transform: scale(1.05);
+    background-color: rgba(68, 83 , 59, 0.95);
+    /* transform: scale(0.98); */
+    box-shadow: none;
+}
+.shadowy {
+    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+}
+.shadowy:hover {
+    box-shadow: none;
+}
+.bgt {
+    background-color: transparent;
+    border: none;
+}
+.lin-grad {
+    background: -webkit-linear-gradient(white, whitesmoke, #41533b, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 1rem;
 }
 .sub {
     font-size: 3rem;
@@ -130,8 +148,9 @@ body {
         background-size: 300%;
     }
     .home {
-        height: 55%;
+        height: 60%;
         background-size: 250%;
+        padding: 1rem auto;
     }
     .sub {
         font-size: 1.25rem;
@@ -145,8 +164,8 @@ body {
     }
     .thisway {
         border-radius: inherit;
-        padding: 3px;
-        margin-top: -5.5rem;
+        padding: 8px;
+        margin-top: -4.5rem;
     }
 }
 

@@ -9,9 +9,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         <% if(walk.images.length) { %>
-                            <img class="img-fluid rounded object-fit-cover" alt="" src="<%=walk.images[0].url%>">
+                            <img class="img-fluid rounded h-100 object-fit-cover" alt="" src="<%=walk.images[0].url%>">
                         <% } else { %>
-                            <img class="img-fluid rounded object-fit-cover" src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" alt="" srcset="">
+                            <img class="img-fluid rounded h-100 object-fit-cover" src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" alt="" srcset="">
                         <% } %>
                     </div>
                     <div class="col-md-8">
@@ -21,7 +21,7 @@
                             <p class="card-text">
                                 <small class="text-muted"><%= walk.location%></small>
                             </p>
-                            <a class="btn btn-outline-info text-secondary" href="/walks/<%=walk._id%>">View <%=walk.title%></a>
+                            <a class="btn btn-outline-info text-secondary pb-shadow" href="/walks/<%=walk._id%>">View <%=walk.title%></a>
                         </div>
                     </div>
                 </div>
