@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     background-image: url("/images/background.jpg");
     background-size: cover;
     background-position: top;
@@ -14,8 +14,8 @@ body {
 }
 footer,
 .footer {
-    margin-top: 5rem;
-    position: absolute;
+    /* margin-top: 5rem; */
+    position: relative;
 }
 
 .walk_jumb {
@@ -23,13 +23,13 @@ footer,
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    height: 33vh;
+    min-height: 33vh;
     padding: 2rem;
     margin-top: -1rem;
 }
-.about {
+/* .about {
     box-sizing: border-box;
-}
+} */
 .wrappery{
     display: grid;
     grid-gap: 10px;
@@ -55,7 +55,7 @@ footer,
     padding-bottom: 1rem;
     font-size: 125%;
     opacity: 0.88;
-    box-shadow: 0 3px 4px 2px rgba(68, 83 , 59, 0.3);
+    /* box-shadow: 0 3px 4px 2px rgba(68, 83 , 59, 0.3); */
     position: relative;
     z-index: 2;
     overflow: hidden;
@@ -64,7 +64,7 @@ footer,
     content: '';
     position: absolute;
     width: 255px;
-    height: 255%;
+    height: 300%;
     background: linear-gradient(white, rgb(18, 156, 180));
     animation: rotate 5s linear infinite;
     z-index: -1;
@@ -73,7 +73,7 @@ footer,
     content: '';
     position: absolute;
     background: #41533b;
-    inset: 10px;
+    inset: 15px;
     border-radius: 15px;
 }
 
@@ -169,7 +169,7 @@ footer,
 /* ##Device = Tablets, Ipads (portrait)  */
 @media (min-width: 768px) and (max-width: 1024px) {
     body {
-        background-size: 125%;
+        background-size: 285%;
     }
 }
 
@@ -178,16 +178,19 @@ footer,
     body {
         background-size: 225%;
     }
+    h1 {
+        font-size: 1.5rem;
+    }
     .walk_jumb {
-        height: 30vh;
+        height: 55vh;
     }
 }
 
 /* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
 @media (min-width: 481px) and (max-width: 767px) {
-    body {
+    /* body {
         background-size: 425%;
-    }
+    } */
     .container,
     nav ul {
         display: grid;
@@ -226,7 +229,7 @@ footer,
 /*  ##Device = Most of the Smartphones Mobiles (Portrait) */
 @media (min-width: 320px) and (max-width: 480px) {
     body {
-        background-size: 750%;
+        background-size: cover;
     }
     a .btn {
         font-size: 0.5rem;

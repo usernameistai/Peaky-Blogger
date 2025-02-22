@@ -1,6 +1,6 @@
 body{
     background-image: url('/images/english_sillhouette.jpeg');
-    background-size: 333%;
+    background-size: 225%;
     background-position: top;
     color: #41533b;
     /* line-height:1.6; */
@@ -25,7 +25,7 @@ footer {
     background-size: 105%;
     background-position: top;
     width: 100%;
-    height: 15rem;
+    min-height: 15rem;
     border-radius: 2.5rem;
     padding: 3rem;
 }
@@ -47,9 +47,20 @@ footer {
 
 /* LARGE SCREENS */
 @media(min-width:700px){
-.wrapper{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    body {
+        background-size: 555%;
+    }
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+    body {
+        background-size: 825%;
+    }
+    .back {
+        min-height: 12rem;
+    }
 }

@@ -59,7 +59,7 @@ a>i:hover {
     align-items: start;
     justify-content: center;
     border-radius: 7px;
-    box-shadow: 0 2px 4px 1px rgba(68, 83 , 59, 0.3);
+    /* box-shadow: 0 2px 4px 1px rgba(68, 83 , 59, 0.3); */
     text-shadow: 2px 4px 3px rgba(68, 83 , 59, 1);
 }
 .showcase h1{
@@ -79,11 +79,11 @@ a>i:hover {
     display: grid;
     align-items: center;
     justify-items: center;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     padding: 1.5rem;
     border-radius: 7px;
     color: var(--light);
-    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+    /* box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3); */
     text-shadow: 2px 4px 3px rgba(68, 83 , 59, 1);
 }
 
@@ -126,10 +126,11 @@ a>i:hover {
     background: #f9f9f9;
     text-align: center;
     padding: 1.5rem;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     border-radius: 7px;
-    box-shadow: rgba(68, 83, 59, 0.15) 0px 15px 25px,
-                    rgba(68, 83, 59, 0.05) 0px 5px 10px;
+    box-shadow: 0px 0px 30px white inset,
+                15px 15px 25px rgba(68, 83, 59, 0.15),
+                5px 5px 10px rgba(68, 83, 59, 0.05);
 }
 
 .hh1 {
@@ -158,7 +159,7 @@ a>i:hover {
     padding: 2rem;
     font-family: 'Arial', cursive;
     color: #41533b;
-    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+    box-shadow: 0 0 15px whitesmoke inset, 0 2px 10px 0px rgba(68, 83 , 59, 0.3);
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 }
 .woodlandgreen {
@@ -166,6 +167,10 @@ a>i:hover {
 }
 .woodlandgreen:hover {
     color: darkslategrey;
+}
+.woodlandgreen-inset {
+    box-shadow: 0 0 rgb(84, 180, 211) inset;
+    z-index: 100;
 }
 .work {
     font-family: 'Work Sans', cursive;

@@ -1,12 +1,12 @@
 body {
-    height: 100vh;
+    max-height: 100vh;
     background-image: url("/images/background.jpg");
     background-size: 150%;
     background-position: top;
     background-repeat: no-repeat;
 }
 footer {
-    margin-top: -50rem;
+    margin-top: auto;
     position: relative;
     bottom: -110%;
 }
@@ -56,12 +56,14 @@ footer {
 
 /* ##Device = Tablets, Ipads (portrait)  */
 @media (min-width: 768px) and (max-width: 1024px) {
-  
+    body {
+        background-size: 325%;
+    }
 }
 
 /* ##Device = Tablets, Ipads (landscape)  */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
+    
 }
 
 /* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
@@ -75,6 +77,22 @@ footer {
 /*  ##Device = Most of the Smartphones Mobiles (Portrait) */
 
 @media (min-width: 320px) and (max-width: 480px) {
+    body {
+        background-size: 450%;
+    }
+    h1 {
+        font-size: 90%;
+        font-weight: bold;
+    }
+    p {
+        font-size: 127%;
+    }
+    .card {
+        width: 100%;
+    }
+    .gallery {
+        width: 100%;
+    }
     .footer{
       /* display: grid; */
       padding-top: 10px;

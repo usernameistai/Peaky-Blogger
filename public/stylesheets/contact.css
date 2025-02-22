@@ -24,7 +24,8 @@ footer {
 .container {
     justify-content: center;
     width: 100vw;
-    /* align-items: center; */
+    margin: 0 -0.75rem;
+    align-items: center;
 }
 
 .wrapper {
@@ -51,7 +52,7 @@ footer {
     border-radius: 10px;
     font-size: 150%;
     opacity: 0.88;
-    box-shadow: 0 2px 4px 2px rgba(68, 83 , 59, 0.3);
+    /* box-shadow: 0 2px 4px 2px rgba(68, 83 , 59, 0.3); */
     grid-row-end: auto;
     grid-row-start: auto;
     padding: 1rem;
@@ -161,10 +162,11 @@ footer {
 /*  ##Device = Most of the Smartphones Mobiles (Portrait) */
 @media (min-width: 320px) and (max-width: 480px) {
     body {
-        background-size: 500%;
+        background-size: 1700%;
     }
     .container{
         display: block;
+        margin: 0 -0.5rem;
         padding: 1rem;
     }
     .wrapper,

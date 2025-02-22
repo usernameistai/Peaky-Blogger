@@ -31,8 +31,13 @@ footer {
   transform: scale(1.25);
 }
 .pb-shadow {
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
-               rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+              rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.pb-inset-shadow {
+  box-shadow: 0 0 15px whitesmoke inset,
+            rgba(0, 0, 0, 0.15) 0px 15px 25px,
+              rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 .shadowy {
   box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);

@@ -18,7 +18,7 @@ body {
     padding-bottom: 0;
     padding-top: 5rem;
     text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
-    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+    box-shadow: 0 0 10px white inset, 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
 }
 .bold {
     font-weight: 550;
@@ -48,6 +48,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-bottom: 1rem;
+    background-clip: text;
 }
 .sub {
     font-size: 3rem;
@@ -138,7 +139,7 @@ body {
         background-size: 125%;
     }
     .sub {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -148,15 +149,17 @@ body {
         background-size: 300%;
     }
     .home {
-        height: 60%;
+        height: 69%;
         background-size: 250%;
         padding: 1rem auto;
     }
     .sub {
-        font-size: 1.25rem;
+        font-size: 1.40rem;
+        margin-top: -0.75rem;
+        margin-bottom: 3.5rem;
     }
     .text-white {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
     .logsig {
         margin-top: 2rem;
@@ -174,7 +177,7 @@ body {
         background-size: 300%;
     }
     .home {
-        height: 20%;
+        height: 40%;
         background-size: 150%;
     }
 } 
