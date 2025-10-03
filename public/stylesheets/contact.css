@@ -1,33 +1,33 @@
 body {
     min-height: 100vh;
-    background-image: url('/images/english_sillhouette.jpeg');
-    background-size: 150%;
-    background-position: top;
-    margin: -1rem 0 0 0;
-    padding: 0;
-    width: 100%;
+    background-image: url('/images/english_sillhouette.jpeg') !important;
+    background-size: 350% !important;
+    /* background-position: top; */
+    margin: 0;
+    max-width: 100%;
+    height: auto;
 }
 footer {
-      /* margin-top: 150vh; */
+    margin-top: 1500%;
     position: absolute;
     bottom: auto;
 }  
-/* main {
+main {
     background-size: cover;
     background-repeat: no-repeat;
-} */
+}
+.sectionone {
+    min-width: 100%;
+}
 .footer {
     margin-top: 0;
     margin-bottom: 0;
 }
-
 .container {
+    margin: 0 auto;
     justify-content: center;
-    width: 100vw;
-    margin: 0 -0.75rem;
     align-items: center;
 }
-
 .wrapper {
     display: grid;
     grid-gap: 0.75rem;
@@ -35,28 +35,25 @@ footer {
     grid-template-rows: repeat(auto-fill, [row] 12rem);
     color: #444;
 }
-
 .back {
     background-image: url('/images/english_combine_harvester.jpeg');
     background-size: 105%;
     background-position: bottom;
-    width: 100%;
-    height: 15rem;
     border-radius: 2.5rem;
     padding: 3rem;
+    /* opacity: 95%; */
 }
-
 .box {
     background-color: #41533b;
     color: #f9f9f9;
     border-radius: 10px;
     font-size: 150%;
-    opacity: 0.88;
+    opacity: 0.95;
     /* box-shadow: 0 2px 4px 2px rgba(68, 83 , 59, 0.3); */
     grid-row-end: auto;
     grid-row-start: auto;
-    padding: 1rem;
-    backdrop-filter: blur(20px);
+    padding: 1.25rem;
+    /* backdrop-filter: blur(20px); */
 }
 
 .a {
@@ -100,15 +97,13 @@ footer {
     text-decoration: none;
 }
 
-
 /* media */
-
 /* 
 ##Device = Desktops */
 @media (min-width: 1281px) {
     body,
     .conatainer{
-        margin: 1rem auto;
+        margin: auto;
     }
     .wrapper {
     grid-template-columns: repeat(auto-fill, [col] 20rem);
@@ -123,6 +118,9 @@ footer {
     }
     .constainer {
         margin: auto;
+    }
+    .sectionone {
+        max-width: 100%;
     }
     .wrapper {
         grid-template-columns: repeat(auto-fill, [col] 15rem);
@@ -151,6 +149,9 @@ footer {
         display: block;
         padding: 1rem;
     }
+    .sectionone {
+        max-width: 100%;
+    }
     .wrapper, .box {
         display: block;
         margin-bottom: 15px;
@@ -168,6 +169,9 @@ footer {
         display: block;
         margin: 0 -0.5rem;
         padding: 1rem;
+    }
+    .sectionone {
+        max-width: 100%;
     }
     .wrapper,
     .box {

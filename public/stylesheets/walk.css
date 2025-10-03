@@ -36,7 +36,7 @@ footer {
 }
 .pb-inset-shadow {
   box-shadow: 0 0 15px whitesmoke inset,
-            rgba(0, 0, 0, 0.15) 0px 15px 25px,
+              0px 15px 25px wheat,
               rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 .shadowy {

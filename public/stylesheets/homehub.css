@@ -192,6 +192,14 @@ a>i:hover {
     box-shadow: none;
 }
 
+.glass-shadow {
+    box-shadow:
+      inset 10px 10px 20px rgba(153, 192, 255, 0.1),
+      inset 2px 2px 5px rgba(195, 218, 255, 0.2),
+      inset -10px -10px 20px rgba(229, 253, 190, 0.1),
+      inset -2px -2px 30px rgba(247, 255, 226, 0.2);
+}
+
 
 
 /* ##Device = Desktops */
@@ -408,5 +416,20 @@ a>i:hover {
 }
 
 @media (min-width: 200px) and (max-width: 319px){
-
+    body {
+        background-size: 3000%;
+    }
+    footer {
+        margin-top: 200rem;
+        position: relative;
+    }
+    .top-container {
+        display: grid;
+        width: 10%;
+        grid-template-areas: 
+        'showcase'
+        'top-box-a'
+        'top-box-b'
+        'showmap';
+    }
 } 

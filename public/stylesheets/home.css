@@ -96,6 +96,14 @@ body {
     text-shadow: none;
 }
 
+.glass-shadow {
+    box-shadow:
+      inset 10px 10px 20px rgba(153, 192, 255, 0.1),
+      inset 2px 2px 5px rgba(195, 218, 255, 0.2),
+      inset -10px -10px 20px rgba(229, 253, 190, 0.1),
+      inset -2px -2px 30px rgba(247, 255, 226, 0.2);
+}
+
 /* ##Device = Desktops */
 @media (min-width: 1281px) {
   

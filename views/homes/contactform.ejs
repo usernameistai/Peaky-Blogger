@@ -1,17 +1,16 @@
 <% layout('layouts/boilerplate') %>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'>
 <link rel='stylesheet' href='/stylesheets/contactform.css'>
 
     <main class="container">
-        <section class="animate__animated animate__zoomInDown">
+        <section>
             <div class='my-3'>
                 <div class='shadow pb-shadow back rounded' style='color: #f9f8fd;'>
-                    <h1 style=' margin: 1rem 0 1rem 0; text-align: center;'><i class='fas fa-tree fa-2x'></i><i class='fas fa-utensils fa-2x'></i> Email Peaky Blogger</h1>
-                    <h4 style='text-align: center;'>Please email me any questions or support you might have</h4>
+                    <h1 class='mx-0 my-1 text-center;'><i class='fas fa-tree fa-2x'></i><i class='fas fa-utensils fa-2x'></i> Email Peaky Blogger</h1>
+                    <h4 class='text-center;'>Please email me any questions or support you might have</h4>
                 </div>
             </div>
         </section>
-        <div class='animate__animated animate__bounceInLeft pb-inset-shadow rounded mb-5 email'>
+        <div class=' pb-inset-shadow rounded mb-5 email'>
             <h1 class='text-center pt-1'>Email Me</h1>
             <div class='emailform'>
                 <form action='/send-email' method='POST'>
