@@ -41,7 +41,6 @@ main {
     background-position: bottom;
     border-radius: 2.5rem;
     padding: 3rem;
-    /* opacity: 95%; */
 }
 .box {
     background-color: #41533b;
@@ -132,6 +131,9 @@ main {
 @media (min-width: 768px) and (max-width: 1024px) {
     body {
         background-size: 500%;
+    }
+    .back {
+        min-width: 102.5%;
     }
 }
 

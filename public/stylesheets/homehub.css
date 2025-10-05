@@ -6,6 +6,12 @@ body {
     background-repeat: no-repeat;
     /* height: 100%; */
 }
+
+:root {
+    --light: white;
+    --woodland-green: #41533b;
+    --peakyb-blue: rgb(84, 180, 211);
+}
 main {
     margin-bottom: 25rem;
 }
@@ -18,7 +24,7 @@ a>i:hover {
     background-image: url("/images/english_sillhouette.jpeg");
     height: 30vh;
     background-size: cover;
-    background-position: left;
+    background-position: left 75%;
     background-repeat: no-repeat;
     margin-top: -1rem;
 }
@@ -36,13 +42,13 @@ a>i:hover {
     'showmap showmap showmap';
     padding-top: 10px;
     font-family: 'Arial', cursive;
-    color: #41533b;
+    color: var(--woodland-green);
     /* text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
     box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3); */
 }
   
 .top-container a {
-    background-color: #41533b;
+    background-color: var(--woodland-green);
 }
 
 /* showcase */
@@ -53,14 +59,18 @@ a>i:hover {
       rgba(255, 255, 255, 0.05)), url('/images/beer_barrel.jpg');
     background-size: cover;
     background-position: bottom;
-    padding: 1rem;
+    padding: 5rem; /* from 1rem */
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    border-radius: 7px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 225px;
+    /* border-radius: 150px;  from 7px */
     /* box-shadow: 0 2px 4px 1px rgba(68, 83 , 59, 0.3); */
-    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 1);
+    text-shadow: 2px 4px 3px var(--woodland-green);
 }
 .showcase h1{
     font-size: 4rem;
@@ -84,7 +94,7 @@ a>i:hover {
     border-radius: 7px;
     color: var(--light);
     /* box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3); */
-    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 1);
+    text-shadow: 2px 4px 3px var(--woodland-green);
 }
 
 .top-box .price{
@@ -119,7 +129,7 @@ a>i:hover {
     display: grid;
     grid-gap: 35px;
     grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-    color: #41533b;
+    color: var(--woodland-green);
 }
 
 .box{
@@ -158,18 +168,18 @@ a>i:hover {
     grid-template-columns: repeat(2, 1fr);
     padding: 2rem;
     font-family: 'Arial', cursive;
-    color: #41533b;
+    color: var(--woodland-green);
     box-shadow: 0 0 15px whitesmoke inset, 0 2px 10px 0px rgba(68, 83 , 59, 0.3);
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 }
 .woodlandgreen {
-    background-color: #41533b;  
+    background-color: var(--woodland-green);  
 }
 .woodlandgreen:hover {
     color: darkslategrey;
 }
 .woodlandgreen-inset {
-    box-shadow: 0 0 rgb(84, 180, 211) inset;
+    box-shadow: 0 0 var(--peakyb-blue) inset;
     z-index: 100;
 }
 .work {
@@ -224,6 +234,9 @@ a>i:hover {
       }
       footer {
           margin-top: 25rem;
+      }
+      .pageone {
+        background-position: left -50%;
       }
     .boxes{
         display: grid;
@@ -409,7 +422,7 @@ a>i:hover {
         font-size: 1rem;
     }
     .homhbott {
-    display: flexbox;
+    display: flex;
     margin: 3rem 0;
     }
 
