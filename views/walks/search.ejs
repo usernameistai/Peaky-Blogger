@@ -7,6 +7,6 @@
 <% } else { %>
   <ul>
     <% walks.forEach(walk => { %>
-      <li><a href="/walks/<%= walk._id %>"><%= walk.title %></a></li>
+      <li><a href=`/walks/<%= walk._id %>`><%= walk.title %></a></li>
     <% }) %>
   </ul>
