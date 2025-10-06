@@ -76,3 +76,29 @@ module.exports.deleteWalk = async (req, res) => {
   req.flash('success', 'Deleted your walk');
   res.redirect('/walks');
 };
+
+// module.exports.searchWalk = async (req, res) => {
+//   try {
+//     const searchQuery = req.query.q;
+//     const walks = await Walk.find({
+//       title: { $regex: searchQuery, $options: "i" }
+//     });
+//     res.render('walks/index', { walks, query: searchQuery });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send('Server error');
+//   }
+// };
+
+module.exports.searchWalk = async (req, res) => {
+  const { q } = req.query;
+  try {
+    const walks = await Walk.find({
+      title: { $regex: q, $options: "i" }
+    });
+    res.render('walks/search', { walks, query });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error searching for walk');
+  }
+};

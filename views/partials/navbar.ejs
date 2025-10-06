@@ -33,11 +33,11 @@
                 </ul>
                 </li>
             </ul>
-            <form class="input-group w50 n50 mx-2" role="search">
+            <form action="/walks/search" method="GET" class="input-group w50 n50 mx-2" role="search">
                 <span class="input-group-text text-secondary">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </span>
-                <input class="form-control me-2" type="search" placeholder="Search for a walk" aria-label="Search">
+                <input class="form-control me-2" type="search" name="q" placeholder="Search for a walk" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <div class="navbar-nav justify-content-end pe-3 d-flex h6">

@@ -6,7 +6,6 @@ const { isLoggedIn, validateWalk, isAuthor } = require('../middleware');
 const multer = require('multer');
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
-
 const Walk = require('../models/walk');
 
 
@@ -16,6 +15,10 @@ router.route('/')
 
 router.get('/new', isLoggedIn, walks.renderNewForm);
 
+// Adding search terms
+router.get('/search', walks.searchWalk);
+    // .get(walks.searchWalk);
+
 router.route('/:id')
     .get(catchAsync(walks.showWalk))
     .put(isLoggedIn, isAuthor, upload.array('image'), validateWalk, catchAsync(walks.updateWalk))
@@ -23,5 +26,9 @@ router.route('/:id')
 
 router.get('/:id/edit', isLoggedIn, isAuthor, catchAsync(walks.renderEditForm));
 
+
+// // Adding search terms
+// router.get('/search', walks.searchWalk);
+//     // .get(walks.searchWalk);
 
 module.exports = router;
