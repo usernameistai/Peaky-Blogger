@@ -7,14 +7,14 @@ body {
 }
 footer {
     margin-top: auto;
-    position: relative;
+    position: absolute;
     bottom: -110%;
 }
 .pageoneone { 
     background-image: url("/images/english_sillhouette.jpeg");
-    height: 25vh;
+    height: 30vh;
     background-size: cover;
-    background-position: left;
+    background-position: left 75%;
     background-repeat: no-repeat;
     margin-top: -1rem;
     margin-bottom: 1rem;
