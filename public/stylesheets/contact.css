@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
     background-image: url('/images/english_sillhouette.jpeg') !important;
     background-size: 350% !important;
-    /* background-position: top; */
+    background-position: top;
     margin: 0;
     max-width: 100%;
     height: auto;
@@ -12,10 +12,10 @@ footer {
     position: absolute;
     bottom: auto;
 }  
-main {
+/* main {
     background-size: cover;
     background-repeat: no-repeat;
-}
+} */
 .sectionone {
     min-width: 100%;
 }
@@ -165,11 +165,11 @@ main {
 /*  ##Device = Most of the Smartphones Mobiles (Portrait) */
 @media (min-width: 320px) and (max-width: 480px) {
     body {
-        background-size: 1700%;
+        background-size: 1000% !important;
     }
     .container{
-        display: block;
-        margin: 0 -0.5rem;
+        /* display: block; */
+        margin: 0;
         padding: 1rem;
     }
     .sectionone {
@@ -179,8 +179,8 @@ main {
     .box {
         display: block;
         margin-bottom: 15px;
-        margin: 1rem auto;
-        max-width: 96%;
+        margin: auto;
+        max-width: 100%;
     }
 }
 

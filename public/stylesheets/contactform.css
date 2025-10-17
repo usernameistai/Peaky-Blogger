@@ -46,7 +46,7 @@ footer {
 }
 
 /* LARGE SCREENS */
-@media(min-width:700px){
+@media(min-width:701px){
     body {
         background-size: 555%;
     }
@@ -56,11 +56,23 @@ footer {
     }
 }
 
+@media (min-width: 481px) and (max-width: 700px) {
+    body {
+        background-size: 1500%;
+    }
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
     body {
         background-size: 825%;
     }
+    .container {
+        margin-top: -2.5rem;
+    }
+    .w25 {
+        width: 42vw;
+    }
     .back {
-        min-height: 12rem;
+        min-height: 10rem;
     }
 }
