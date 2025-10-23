@@ -2,6 +2,7 @@ body {
     min-height: 100vh;
     background-image: url('/images/english_sillhouette.jpeg') !important;
     background-size: 350% !important;
+    /* background-size: cover; */
     background-position: top;
     margin: 0;
     max-width: 100%;
@@ -35,10 +36,19 @@ footer {
     grid-template-rows: repeat(auto-fill, [row] 12rem);
     color: #444;
 }
+.wrapper p {
+    text-shadow: cyan 1px 0 10px;
+}
+.wrapper > a {
+    text-shadow: none;
+}
+.wrapper > a:hover {
+    scale: 1.25;
+}
 .back {
     background-image: url('/images/english_combine_harvester.jpeg');
     background-size: 105%;
-    background-position: bottom;
+    background-position: left 55%;
     border-radius: 2.5rem;
     padding: 3rem;
 }

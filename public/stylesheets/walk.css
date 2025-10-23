@@ -51,6 +51,10 @@ footer {
 .w50 {
   width: 50vw;
 }
+.w55 {
+  width: 60vw;
+  margin: auto;
+}
 .w100 {
   width: 100vw;
 }
@@ -138,7 +142,9 @@ footer {
 
 /* ##Device = Tablets, Ipads (portrait)  */
 @media (min-width: 768px) and (max-width: 1024px) {
-  
+  .n50 {
+    width: 85vw;
+  }
 }
 
 /* ##Device = Tablets, Ipads (landscape)  */
