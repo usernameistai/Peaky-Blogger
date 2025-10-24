@@ -2,11 +2,12 @@ body {
     min-height: 100vh;
     background-image: url('/images/english_sillhouette.jpeg') !important;
     background-size: 350% !important;
-    /* background-size: cover; */
     background-position: top;
     margin: 0;
     max-width: 100%;
-    height: auto;
+}
+:root {
+    --woodland-green: #41533b;
 }
 footer {
     margin-top: 1500%;
@@ -36,14 +37,11 @@ footer {
     grid-template-rows: repeat(auto-fill, [row] 12rem);
     color: #444;
 }
-.wrapper p {
+.wrapper p, .d2 {
     text-shadow: cyan 1px 0 10px;
 }
-.wrapper > a {
+.wrapper a {
     text-shadow: none;
-}
-.wrapper > a:hover {
-    scale: 1.25;
 }
 .back {
     background-image: url('/images/english_combine_harvester.jpeg');
@@ -53,7 +51,7 @@ footer {
     padding: 3rem;
 }
 .box {
-    background-color: #41533b;
+    background-color: var(--woodland-green);
     color: #f9f9f9;
     border-radius: 10px;
     font-size: 150%;
@@ -61,7 +59,7 @@ footer {
     /* box-shadow: 0 2px 4px 2px rgba(68, 83 , 59, 0.3); */
     grid-row-end: auto;
     grid-row-start: auto;
-    padding: 1.25rem;
+    padding: 1.5rem;
     /* backdrop-filter: blur(20px); */
 }
 

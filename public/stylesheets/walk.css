@@ -7,8 +7,13 @@ body {
   background-position: top;
   background-repeat: no-repeat;
 }
-main {
+/* main {
   margin-bottom: 25vh;
+} */
+:root {
+  /* --light: white; */
+  --woodland-green: #41533b;
+  /* --peakyb-blue: rgb(84, 180, 211); */
 }
 button:hover {
   transform: scale(1.025);
@@ -19,7 +24,7 @@ button:hover {
 footer {
   /* margin-top: 150vh; */
   position: absolute;
-  bottom: -275%;
+  bottom: auto;
 }
 .pb-col {
   color: #41533b;
@@ -65,11 +70,11 @@ footer {
   font-weight: 550;
 }
 .thisway {
-  background-color: #41533b;
+  background-color: var(--woodland-green);
   font-weight: 500;
 }
 .thisway:hover {
-  background-color: #41533b;
+  background-color: var(--woodland-green);
   transform: scale(1.05);
 }
 .sub {

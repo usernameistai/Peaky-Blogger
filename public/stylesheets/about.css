@@ -1,3 +1,7 @@
+:root {
+    --pb-col: #41533b;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,16 +9,16 @@
 }
 
 body {
-    display: flex;
-    height: 100vh;
+    height: 100vh;  /* changed from height*/
+    max-width: 100%;
     background-image: url("/images/background.jpg");
-    background-size: cover;
+    background-size: 350% !important; /* was cover */
     background-position: top;
-    background-repeat: no-repeat;
 }
-footer,
-.footer {
-    position: sticky;
+footer {
+    position: absolute;
+    bottom: auto;
+    margin-top: 1rem;
 }
 
 .walk_jumb {
@@ -25,9 +29,9 @@ footer,
     background-repeat: no-repeat;
     margin-top: -1rem;
 }
-/* .about {
+.about {
     box-sizing: border-box;
-} */
+}
 .wrappery{
     display: grid;
     grid-gap: 1.25rem;
@@ -49,7 +53,7 @@ footer,
     justify-content: center;
     align-items: center;
     justify-items: center;
-    background-color: #41533b;
+    background-color: var(--pb-col);
     color: #fff;
     text-shadow: cyan 1px 0 10px;
     border-radius: 15px;
@@ -63,21 +67,20 @@ footer,
 
 .boxy:hover {
     opacity: 0.825;
-    /* font-weight: 300; */
-    /* transition: 0.25s; */
-    border: 3px solid white;
-    scale: 1.15;
+    border: 2px solid white;
+    scale: 1.1;
     z-index: 50;
+    transition: 0.25s;
 }
 
-.boxbtn {
+/* .boxbtn {
     transition: color 1.25s;
     transition: scale() 1.25s;
 }
 .boxbtn:hover {
     color: rgb(27, 121, 214);
     transform: scale(1.25);
-}
+} */
   
 .aa {
     grid-area: a;
