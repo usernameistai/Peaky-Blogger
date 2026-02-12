@@ -11,9 +11,23 @@ body {
     margin-top: 15rem;
 }
 .mapstyleh {
-    width: 100%;
-    height: 85vh;
-    margin-top: -2rem;
+  width: 100%;
+  height: 85vh;
+  margin-top: -2rem;
+  background-color: #f0ede5;
+  /* Remove display: flex, align-items, and justify-content */
+  position: relative; /* Better for Mapbox sizing */
+}
+.mapstyleh:empty:before {
+  content: 'Loading Peaky Blogger Map...';
+  color: lightslategray;
+  font-family: sans-serif;
+  /* Center it using absolute positioning instead of flex */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* This allows clicks to pass THROUGH the text to the map */
 }
 .mgt {
     margin-top: -0.25rem;
@@ -26,6 +40,10 @@ body {
 }
 .map-shad-inset {
     box-shadow: inset -10px -5px 5px white, inset 10px 10px 5px #41533b;
+}
+
+.mapboxgl-popup {
+  z-index: 9999;
 }
 
 /* media */

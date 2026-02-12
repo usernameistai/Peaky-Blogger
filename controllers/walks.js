@@ -4,8 +4,15 @@ const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken});
 const { cloudinary } = require('../cloudinary');
 
+module.exports.renderHomehub = async (req, res) => {
+  const walks = await Walk.find({})
+    .select('title location description images geometry');
+  res.render('homes/homehub', { walks });
+};
+
 module.exports.index = async (req, res) => {
-  const walks = await Walk.find({});
+  const walks = await Walk.find({})
+    .select('title location description images geometry');
   res.render('walks/index', {walks});
 };
 
@@ -89,16 +96,3 @@ module.exports.searchWalk = async (req, res) => {
     res.status(500).send('Server error');
   }
 };
-
-// module.exports.searchWalk = async (req, res) => {
-//   const { q } = req.query;
-//   try {
-//     const walks = await Walk.find({
-//       title: { $regex: q, $options: "i" }
-//     });
-//     res.render('walks/search', { walks, query: q });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send('Error searching for walk');
-//   }
-// };

@@ -15,3 +15,7 @@ new mapboxgl.Marker()
             .setHTML(`<h4 style="color: #D4AF37;">${walk.title}</h4><p style="color: teal;">${walk.location}</p>`)
     )
     .addTo(map);
+
+map.on('load', () => {
+    map.resize();
+});

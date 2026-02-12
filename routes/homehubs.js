@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const walks = require('../controllers/walks');
 // THIS HAS BEEN ADDED SO CAN BE REMOVED IF NECESSARY
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
+
+const fs = require('fs');
+const path = require('path');
 // ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED 
 const Walk = require('../models/walk');
 // THIS HAS BEEN ADDED SO CAN BE REMOVED IF NECESSARY// ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED 
@@ -17,9 +21,11 @@ const OAUTH_REFRESH_TOKEN = process.env.OAUTH_REFRESH_TOKEN || '';
 // THIS HAS BEEN ADDED SO CAN BE REMOVED IF NECESSARY// ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED 
 
 router.get('/homehub', async (req, res) => {
-  const walks = await Walk.find({});
-  res.render('homes/homehub', {walks});
+  const walks = await Walk.find({})
+    .select('title location description images geometry');
+  res.render('homes/homehub', { walks });
 });
+
 router.get('/about', (req, res) => {
   res.render('homes/about');
 });
@@ -30,7 +36,8 @@ router.get('/contactform', (req, res) => {
   res.render('homes/contactform');
 });
 router.get('/walks-map', async (req, res) => {
-  const walks = await Walk.find({});
+  const walks = await Walk.find({})
+    .select('geometry title location description');
   res.render('homes/walksmap', {walks});
 });
 // THIS HAS BEEN ADDED SO CAN BE REMOVED IF NECESSARY // ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED 
@@ -82,7 +89,22 @@ router.post('/send-email', (req, res) => {
 // ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED ADDED 
 router.get('/gallery', async (req, res) => {
   const walks = await Walk.find({});
-  res.render('homes/gallery', {walks});
+
+  // Path to your images folder
+  const imagesDir = path.join(__dirname, '../public/images');
+    
+  // Read the folder and filter for actual image files
+  let publicImages = [];
+  try {
+      const files = fs.readdirSync(imagesDir);
+      publicImages = files.filter(file => 
+          ['.webp', '.jpg', '.jpeg', '.png'].includes(path.extname(file).toLowerCase())
+      );
+  } catch (e) {
+      console.log("Error reading public images directory:", e);
+  }
+
+  res.render('homes/gallery', {walks, publicImages});
 });
 
 module.exports = router;

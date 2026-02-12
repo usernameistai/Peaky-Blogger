@@ -129,6 +129,36 @@ footer {
   margin-bottom: 0.75rem;
 }
 
+/* 1. The main popup container */
+.mapboxgl-popup-content {
+  background: #ffffff !important; /* Force a clean white background */
+  color: #212529 !important;      /* Dark grey/black text */
+  border-radius: 10px;
+  padding: 15px !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+}
+
+/* 2. The Title/Link inside the popup */
+.mapboxgl-popup-content a {
+  color: #198754 !important; /* A nice PeakyBlogger Green (or use #0d6efd for Blue) */
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* 3. The description/location text */
+.mapboxgl-popup-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* 4. The little arrow/tip at the bottom */
+.mapboxgl-popup-tip {
+  border-top-color: #ffffff !important;
+}
+
 /* ////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////// */
 /* //////////////////////////// MEDIA /////////////////////////////////////// */

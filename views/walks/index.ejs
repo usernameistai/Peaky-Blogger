@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <% if(walk.images.length) { %>
-                            <img class="img-fluid rounded-start h-100 object-fit-cover" alt="" src="<%=walk.images[0].url%>">
+                            <img class="img-fluid rounded-start h-100 object-fit-cover" alt="" src="<%=walk.images[0].url%>" loading="lazy">
                         <% } else { %>
                             <img class="img-fluid rounded-start h-100 object-fit-cover" src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" alt="" srcset="">
                         <% } %>
@@ -32,5 +32,5 @@
         const mapToken = `<%- process.env.MAPBOX_TOKEN %>`; 
         const walks =  {features: <%- JSON.stringify(walks) %>};
     </script>
-    <script src="/javascripts/clusterMap.js"></script>
+    <script src="/javascripts/clusterMap.js" defer></script>
     

@@ -22,6 +22,7 @@ map.on('load', () => {
         id: 'clusters',
         type: 'circle',
         source: 'walks',
+        slot: 'top',
         filter: ['has', 'point_count'],
         paint: {
             'circle-color': [
@@ -76,6 +77,7 @@ map.on('load', () => {
 
     // inspect a cluster on click
     map.on('click', 'clusters', (e) => {
+        console.log("Cluster clicked!!!");
         const features = map.queryRenderedFeatures(e.point, {
             layers: ['clusters']
         });
@@ -94,6 +96,7 @@ map.on('load', () => {
     });
 
     map.on('click', 'unclustered-point', (e) => {
+        console.log("Point clicked!", e.features[0].properties); // Check what's inside!
         const { popUpMarkup } = e.features[0].properties;
         const coordinates = e.features[0].geometry.coordinates.slice();
         // Ensure that if the map is zoomed out such that

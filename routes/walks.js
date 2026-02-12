@@ -13,6 +13,9 @@ router.route('/')
     .get(catchAsync(walks.index))
     .post(isLoggedIn, upload.array('image'), validateWalk, catchAsync(walks.createWalk));
 
+// router.route('/homehub')
+//     .get(catchAsync(walks.renderHomehub));
+
 router.get('/new', isLoggedIn, walks.renderNewForm);
 
 // Adding search terms
@@ -25,10 +28,5 @@ router.route('/:id')
     .delete(isLoggedIn, isAuthor, catchAsync(walks.deleteWalk));
 
 router.get('/:id/edit', isLoggedIn, isAuthor, catchAsync(walks.renderEditForm));
-
-
-// // Adding search terms
-// router.get('/search', walks.searchWalk);
-//     // .get(walks.searchWalk);
 
 module.exports = router;

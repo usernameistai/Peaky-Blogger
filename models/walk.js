@@ -9,7 +9,6 @@ const ImageSchema = new Schema({
 ImageSchema.virtual('thumbnail').get(function() {
   return this.url.replace('/upload', '/upload/w_300')
 });
-
 const opts  = { toJSON: { virtuals: true }};
 
 const WalkSchema = new Schema({
@@ -51,11 +50,17 @@ const WalkSchema = new Schema({
 }, opts);
 
 WalkSchema.virtual('properties.popUpMarkup').get(function(){
-  return `<strong><a href="/walks/${this._id}" style="text-decoration: none;">
-  ${this.title}</a></strong>
-  <p><i>${this.description.substring(0, 20)}...</i></p>
-  <p>${this.location}</p>`
+  return `<div class="p-1">
+    <strong>
+      <a href="/walks/${this._id}" style="text-decoration: none;">
+        ${this.title}
+      </a>
+    </strong>
+    <p class="text-dark m-0"><i>${this.description.substring(0, 20)}...</i></p>
+    <p class="text-muted small">${this.location}</p>
+  </div>`
 });
+// 
 
 WalkSchema.post('findOneAndDelete', async function (doc) {
   if (doc) {
