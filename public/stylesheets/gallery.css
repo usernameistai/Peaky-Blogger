@@ -28,6 +28,10 @@ footer {
     border-top-left-radius: 5px 5px;
     border-top-right-radius: 5px 5px;
 }
+.gallerybottom {
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+}
 .tdn {
     text-decoration: none;
 }
