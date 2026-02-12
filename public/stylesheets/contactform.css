@@ -1,5 +1,5 @@
 body{
-    background-image: url('/images/english_sillhouette.jpeg');
+    background-image: url('/images/english_sillhouette.webp');
     background-size: 225%;
     background-position: top;
     color: #41533b;
@@ -21,7 +21,7 @@ footer {
 }
 
 .back {
-    background-image: url('/images/english_combine_harvester.jpeg');
+    background-image: url('/images/english_combine_harvester.webp');
     background-size: 105%;
     background-position: top;
     width: 100%;

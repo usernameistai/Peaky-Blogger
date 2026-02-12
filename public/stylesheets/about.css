@@ -11,7 +11,7 @@
 body {
     height: 100vh;  /* changed from height*/
     max-width: 100%;
-    background-image: url("/images/background.jpg");
+    background-image: url("/images/background.webp");
     background-size: 350% !important; /* was cover */
     background-position: top;
 }
@@ -22,7 +22,7 @@ footer {
 }
 
 .walk_jumb {
-    background-image: url('/images/english_sillhouette.jpeg');
+    background-image: url('/images/english_sillhouette.webp');
     height: 30vh;
     background-size: cover;
     background-position: left 75%;

@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    background-image: url('/images/english_sillhouette.jpeg') !important;
+    background-image: url('/images/english_sillhouette.webp') !important;
     background-size: 350% !important;
     background-position: top;
     margin: 0;
@@ -44,7 +44,7 @@ footer {
     text-shadow: none;
 }
 .back {
-    background-image: url('/images/english_combine_harvester.jpeg');
+    background-image: url('/images/english_combine_harvester.webp');
     background-size: 105%;
     background-position: left 55%;
     border-radius: 2.5rem;

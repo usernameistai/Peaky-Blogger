@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
-    url("/images/background.jpg");
+    url("/images/background.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@ body {
 }
 
 .home {
-    background-image: url("/images/landing.jpg");
+    background-image: url("/images/landing.webp");
     height: 90%;
     background-repeat: no-repeat;
     background-size: 110%;
@@ -54,7 +54,7 @@ body {
     font-size: 3rem;
 }
 .pageone {
-    background-image: url("/images/english_sillhouette.jpeg");
+    background-image: url("/images/english_sillhouette.webp");
 }
 .pb-col {
     color: #41533b;

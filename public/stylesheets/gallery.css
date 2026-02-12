@@ -1,6 +1,6 @@
 body {
     max-height: 100vh;
-    background-image: url("/images/background.jpg");
+    background-image: url("/images/background.webp");
     background-size: 150%;
     background-position: top;
     background-repeat: no-repeat;
@@ -11,7 +11,7 @@ footer {
     bottom: -110%;
 }
 .pageoneone { 
-    background-image: url("/images/english_sillhouette.jpeg");
+    background-image: url("/images/english_sillhouette.webp");
     height: 30vh;
     background-size: cover;
     background-position: left 75%;

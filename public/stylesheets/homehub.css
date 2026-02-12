@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    background-image: url("/images/background.jpg");
+    background-image: url("/images/background.webp");
     background-position: cover;
     background-repeat: no-repeat;
 }
@@ -19,7 +19,7 @@ a>i:hover {
 }
 
 .pageone {
-    background-image: url("/images/english_sillhouette.jpeg");
+    background-image: url("/images/english_sillhouette.webp");
     height: 30vh;
     background-size: cover;
     background-position: left 75%;
@@ -54,7 +54,7 @@ a>i:hover {
     grid-area: showcase;
     min-height: 400px;
     background-image: linear-gradient(rgba(255, 255, 255, 0.05), 
-      rgba(255, 255, 255, 0.05)), url('/images/beer_barrel.jpg');
+      rgba(255, 255, 255, 0.05)), url('/images/beer_barrel.webp');
     background-size: cover;
     background-position: bottom;
     padding: 5rem; /* from 1rem */
@@ -99,7 +99,7 @@ a>i:hover {
   
 .top-box-a{
     grid-area: top-box-a;
-    background: url('/images/hartington_peak.jpg');
+    background: url('/images/hartington_peak.webp');
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
@@ -108,7 +108,7 @@ a>i:hover {
 
 .top-box-b{
     grid-area: top-box-b;
-    background: url('/images/inside_pub_peak1.jpg');
+    background: url('/images/inside_pub_peak1.webp');
     background-size: cover;
 }
 
