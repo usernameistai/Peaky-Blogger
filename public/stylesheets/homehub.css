@@ -68,7 +68,7 @@ a>i:hover {
     border-bottom-right-radius: 225px;
     /* border-radius: 150px;  from 7px */
     /* box-shadow: 0 2px 4px 1px rgba(68, 83 , 59, 0.3); */
-    text-shadow: 2px 4px 3px var(--woodland-green);
+    /* text-shadow: 2px 4px 3px var(--woodland-green); */
 }
 .showcase h1{
     font-size: 4rem;
@@ -90,7 +90,10 @@ a>i:hover {
     padding: 1.5rem;
     border-radius: 7px;
     color: var(--light);
-    text-shadow: 2px 4px 3px var(--woodland-green);
+    /* text-shadow: 2px 4px 3px var(--woodland-green); */
+}
+.top-box>a:hover {
+    color: darkslategrey;
 }
 
 .top-box .price{
