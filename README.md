@@ -35,17 +35,15 @@ To initialize the mission locally:
 
 2. **Configure Intel (.env):**
   Requires the following coordinates:
-  *CLOUDINARY_CLOUD_NAME, CLOUDINARY_KEY, CLOUDINARY_SECRET
-
-  *MAPBOX_TOKEN
-
-  *DB_URL (MongoDB Atlas)
+  -CLOUDINARY_CLOUD_NAME, CLOUDINARY_KEY, CLOUDINARY_SECRET
+  -MAPBOX_TOKEN
+  -DB_URL (MongoDB Atlas)
 
 3. **Ignite the Engine:**
   ```bash
   npm start
 
 
-🛡️ Operational Security (Hardening)
+**🛡️ Operational Security (Hardening)**
 
 This project implements Helmet.js for CSP headers and Sanitize-HTML to prevent XSS during expedition logging.
