@@ -40,8 +40,9 @@ To initialize the mission locally:
   -DB_URL (MongoDB Atlas)
 
 3. **Ignite the Engine:**
-  ```bash
-  npm start
+    ```bash
+    npm start
+    ```
 
 
 **🛡️ Operational Security (Hardening)**
