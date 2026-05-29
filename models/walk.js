@@ -6,9 +6,18 @@ const ImageSchema = new Schema({
     url: String,
     filename: String
 });
+
+// Create a virtual property for the optimized carousel view
+ImageSchema.virtual('carousel').get(function () {
+    // Replaces /upload/ with the compression parameters
+    return this.url.replace('/upload/', '/upload/f_auto,q_auto,w_800/');
+});
+
+// Keep your existing thumbnail virtual if you use it for the edit page
 ImageSchema.virtual('thumbnail').get(function() {
   return this.url.replace('/upload', '/upload/w_300')
 });
+
 const opts  = { toJSON: { virtuals: true }};
 
 const WalkSchema = new Schema({
@@ -60,7 +69,6 @@ WalkSchema.virtual('properties.popUpMarkup').get(function(){
     <p class="text-muted small">${this.location}</p>
   </div>`
 });
-// 
 
 WalkSchema.post('findOneAndDelete', async function (doc) {
   if (doc) {

@@ -1,8 +1,9 @@
-// if(process.env.NODE_ENV !== "production") {
-//   require('dotenv').config();
-// }
-process.env.NODE_ENV === 'production';
-require('dotenv').config();
+if(process.env.NODE_ENV !== "production") {
+  require('dotenv').config();
+}
+// Not optimised below
+// process.env.NODE_ENV === 'production';
+// require('dotenv').config();
 
 const express = require('express');
 const app = express();
@@ -18,7 +19,6 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
-
 const MongoStore = require('connect-mongo');
 
 const userRoutes = require('./routes/users');
@@ -28,7 +28,7 @@ const homehubRoutes = require('./routes/homehubs');
 
 const db_url = process.env.DB_URL || 'mongodb://localhost:27017/peakyblogger';
 
-mongoose.connect(db_url)//('mongodb://localhost:27017/peakyblogger')
+mongoose.connect(db_url, { maxPoolSize: 10, }) // added maxpoolsize, Maintain a tight pool allocation to prevent CPU thread choking
   .then(() => console.log('Mongo Connection Open'))
   .catch((err) => { console.log('Oh no Mongo Connection Error'); console.log(err); });
 
@@ -41,6 +41,11 @@ db.once('open', () => { console.log('Database connected'); });
 app.engine('ejs', ejsMate); // ONE OF MANY ENGINES
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+// ADDED: CRITICAL PERFORMANCE WIN: Enable template engine compilation caching
+if (process.env.NODE_ENV === 'production') {
+  app.enable('view cache');
+}
 
 app.use(express.urlencoded({ extended: true })); // PARSES BODY
 app.use(express.json());
@@ -65,10 +70,10 @@ const sessionConfig = {
   name: 'session',
   secret,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false, // CHANGED: true -> false, PERFORMANCE FIX: Stops saving empty logs for bots/pings
   cookie: { 
     httpOnly: true,
-    // secure: true,
+    secure: process.env.NODE_ENV === 'production', // CHANGED from true to ..
     expires: Date.now() + 1000*60*60*24*7, 
     maxAge: 1000*60*60*24*7 }
 };
@@ -106,23 +111,23 @@ const fontSrcUrls = [
 ];
 app.use(
   helmet.contentSecurityPolicy({
-      directives: {
-          defaultSrc: [],
-          connectSrc: ["'self'", ...connectSrcUrls],
-          scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
-          styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
-          workerSrc: ["'self'", "blob:"],
-          objectSrc: [],
-          imgSrc: [
-              "'self'",
-              "blob:",
-              "data:",
-              "https://res.cloudinary.com/future-source/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
-              "https://images.unsplash.com/",
-              "https://media.istockphoto.com/",
-          ],
-          fontSrc: ["'self'", ...fontSrcUrls],
-      },
+    directives: {
+      defaultSrc: [],
+      connectSrc: ["'self'", ...connectSrcUrls],
+      scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
+      styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+      workerSrc: ["'self'", "blob:"],
+      objectSrc: [],
+      imgSrc: [
+          "'self'",
+          "blob:",
+          "data:",
+          "https://res.cloudinary.com/future-source/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+          "https://images.unsplash.com/",
+          "https://media.istockphoto.com/",
+      ],
+      fontSrc: ["'self'", ...fontSrcUrls],
+    },
   })
 );
 
@@ -133,6 +138,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// Global Local Response Handlers
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   res.locals.success = req.flash('success');
@@ -140,6 +146,7 @@ app.use((req, res, next) => {
   next();
 }); //BEFORE ROUTE HANDLERS
 
+// App Router Declarations
 app.use('/', userRoutes);
 app.use('/', homehubRoutes);
 app.use('/walks', walkRoutes);
@@ -150,6 +157,7 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
+// Fallback Error Middleware Chain
 app.all('*', (req, res, next) => {
   next(new ExpressError('Page Not Found', 404));
 });

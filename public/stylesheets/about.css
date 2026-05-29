@@ -67,10 +67,10 @@ footer {
 
 .boxy:hover {
     opacity: 0.825;
-    border: 2px solid white;
-    scale: 1.1;
+    /* border: 2px solid white; */
+    scale: 1.05;
     z-index: 50;
-    transition: 0.25s;
+    transition: 0.5s;
 }
 
 /* .boxbtn {

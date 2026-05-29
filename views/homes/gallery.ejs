@@ -1,31 +1,38 @@
 <% layout('layouts/boilerplate') %>
 <link rel="stylesheet" href="/stylesheets/gallery.css">
 
-<div class="rounded p-5 pageoneone pb-shadow">
+<div class="rounded p-3 p-md-5 pageoneone pb-shadow">
     <div class="text-center mt-1 pb-0 pb-col mb-3">
         <h1 class="txt-shad"><i class="fas fa-tree fa-2x"></i><i class="fas fa-utensils fa-2x"></i> <sup><i class="fa-regular fa-images fa-2x"></i></sup> Peaky Blogger's Gallery </h1>
         <p class="pb-col text-center pb-3 mb-3">Photos and images from <a class="tdn bold" href="/homehub">The Peaky Blogger</a></p>
     </div>  
 </div>
 
-<div class="d-flex flex-wrap mx-auto gap-2 mb-5 pb-5">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 mb-5 pb-5 mx-auto">
+    
     <% for(let walk of walks) { %>
-        <div class="card mb-1 pb-shadow d-inline-block">
-            <% if(walk.images.length) { %>
-                <div class="rounded">
-                    <img class="img-fluid gallery gallerytop" alt="" src="<%=walk.images[0].url%>">
-                    <a class="ms-2 tdn pb-col bold mx-auto onh" href="/walks/<%=walk._id%>"><%=walk.title.substring(0, 20)%></a>
-                </div>
-            <% } else { %>
-                <img class="img-fluid rounded" src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" alt="" srcset="">
-            <% } %>
+        <div class="col">
+            <div class="card h-100 pb-shadow">
+                <% if(walk.images?.length) { %>
+                    <div class="rounded d-flex flex-column h-100">
+                        <img class="img-fluid gallery gallerytop object-fit-cover w-100" alt="<%= walk.title %>" src="<%= walk.images[0].thumbnail %>" loading="lazy">
+                        <a class="p-2 tdn pb-col bold text-center onh mt-auto" href="/walks/<%= walk._id %>">
+                            <%= walk.title?.substring(0, 20) %>
+                        </a>
+                    </div>
+                <% } else { %>
+                    <img class="img-fluid rounded h-100 object-fit-cover" src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" alt="Fallback" loading="lazy">
+                <% } %>
+            </div>
         </div>
     <% } %>
     
     <% for(let img of publicImages) { %>
-        <div class="card mb-1 pb-shadow d-inline-block">
-            <div class="rounded">
-                <img class="img-fluid gallery gallerytop gallerybottom" alt="" src="/images/<%= img %>">
+        <div class="col">
+            <div class="card h-100 pb-shadow">
+                <div class="rounded h-100">
+                    <img class="img-fluid gallery gallerytop gallerybottom object-fit-cover w-100" alt="Gallery asset" src="/images/<%= img %>" loading="lazy">
+                </div>
             </div>
         </div>
     <% } %>
