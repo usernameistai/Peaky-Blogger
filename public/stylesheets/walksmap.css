@@ -1,95 +1,80 @@
+/* --- Base Layer Config --- */
 body {
     min-height: 100vh;
-    /* background-image: url("/images/background.jpg"); */
-    background-size: 190%;
-    background-position: top;
+    background-size: 290%;
+    background-position: top center;
     background-repeat: no-repeat;
     box-sizing: border-box;
 }
-.footer, footer {
-    position: absolute;
-    margin-top: 15rem;
+
+/* --- Clean Footer Flow Inheritance --- */
+footer, .footer {
+    position: relative !important; /* Overrides absolute anchors entirely */
+    margin-top: auto !important;   /* Natively locks footer to browser floor */
+    margin-bottom: 0 !important;
 }
+
+/* --- Map Viewport Terminals --- */
 .mapstyleh {
-  width: 100%;
-  height: 85vh;
-  margin-top: -2rem;
-  background-color: #f0ede5;
-  /* Remove display: flex, align-items, and justify-content */
-  position: relative; /* Better for Mapbox sizing */
+    width: 100%;
+    height: 70vh; /* Scaled slightly down to ensure map + buttons fit together without clipping the view fold */
+    background-color: #f0ede5;
+    position: relative;
 }
+
 .mapstyleh:empty:before {
-  content: 'Loading Peaky Blogger Map...';
-  color: lightslategray;
-  font-family: sans-serif;
-  /* Center it using absolute positioning instead of flex */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none; /* This allows clicks to pass THROUGH the text to the map */
+    content: 'Loading Peaky Blogger Map...';
+    color: lightslategray;
+    font-family: sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
-.mgt {
-    margin-top: -0.25rem;
+
+/* --- Tactile Button Response Systems --- */
+.shadowy {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+                rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
+
+/* The "Mechanical Press" Illusion from your Landing Page */
+.shadowy:hover {
+    box-shadow: none !important; 
+    transform: translateY(2px) scale(0.99); /* Simulates a physical push downwards */
+}
+
+/* --- Shadows & Aesthetic Accents --- */
 .map-shad {
     box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.4),
-     -5px -5px 10px rgba(255, 255, 255, 0.8),
-     10px 10px 10px rgba(65, 83, 59, 0.9),
-      5px 5px 10px rgba(65, 83, 59, 0.5);
-}
-.map-shad-inset {
-    box-shadow: inset -10px -5px 5px white, inset 10px 10px 5px #41533b;
+                 -5px -5px 10px rgba(255, 255, 255, 0.8),
+                 10px 10px 10px rgba(65, 83, 59, 0.9),
+                  5px 5px 10px rgba(65, 83, 59, 0.5);
 }
 
 .mapboxgl-popup {
-  z-index: 9999;
+    z-index: 9999;
 }
 
-/* media */
-/* ##Device = Desktops */
-@media (min-width: 1281px) {
+/* --- Responsive Layout Modifiers --- */
 
+/* High-Resolution Desktops */
+@media (min-width: 1025px) {
+    .mapstyleh {
+        height: 78vh; /* Grants desktop screens more grand map canvas space */
+    }
 }
 
-/*  ##Device = Laptops, Desktops  */
-@media (min-width: 1025px) and (max-width: 1280px) {
-
-}
-
-/* ##Device = Tablets, Ipads (portrait)  */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-}
-
-/* ##Device = Tablets, Ipads (landscape)  */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-}
-
-/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
-@media (min-width: 481px) and (max-width: 767px) {
-
-}
-
-/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
-@media (min-width: 320px) and (max-width: 480px) {
-  body {
-    min-height: 100vh;
-    background-size: 275%;
-    background-position: top;
-  }
-  .mapstyleh {
-    width: auto;
-    height: 75vh;
-    margin-top: -2rem;
-}
-  footer {
-    /* position: relative; */
-    margin-bottom: 135rem;
-  }
-}
-
-@media (min-width: 200px) and (max-width: 319px){
-
+/* Mobile & Smart Phone Form Factors */
+@media (max-width: 767px) {
+    body {
+        background-size: 275%;
+    }
+    
+    .mapstyleh {
+        height: 60vh; /* Adjusts map container so the stacked buttons stay completely visible on screen */
+        margin-top: 0;
+    }
 }

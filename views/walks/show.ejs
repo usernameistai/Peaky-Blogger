@@ -1,19 +1,14 @@
 <% layout('layouts/boilerplate') %>
     <link rel="stylesheet" href="/stylesheets/stars.css">
 
-    <div class="row mb-3">
-        <div class="col-7 mx-auto">
-            <div class="card pb-shadow rounded">
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-md-7 mx-auto">
+            <div class="card pb-shadow rounded h-100">
                 <div class="card-header bg-secondary text-white">
                     <%= walk.title %>
                 </div>
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
-                        <!-- <% walk.images.forEach((img, i)=> { %>
-                            <div class="carousel-item <%= i===0?'active':'';%>">
-                                <img src="<%=img.url%>" class="d-block w-100 img-fluid" alt="...">
-                            </div>
-                        <% }) %> -->
                         <% walk.images.forEach((img, i)=> { %>
                             <div class="carousel-item <%= i===0?'active':'';%>">
                                 <img src="<%=img.url%>" 
@@ -45,15 +40,9 @@
                     </p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-muted">
-                        <%= walk.location %>
-                    </li>
-                    <li class="list-group-item text-muted ">
-                        Created by <%= walk.author.username %>
-                    </li>
-                    <li class="list-group-item">
-                        £<%= walk.price %>
-                    </li>
+                    <li class="list-group-item text-muted"><%= walk.location %></li>
+                    <li class="list-group-item text-muted ">Created by <%= walk.author.username %></li>
+                    <li class="list-group-item">£<%= walk.price %></li>
                     <li class="list-group-item">A third item</li>
                 </ul>
                 <div class="card-body">
@@ -75,32 +64,33 @@
                 <% } %>
             </div>
         </div>
-        <div class="col-5">
+        <div class="col-12 col-md-5">
             <div id='map' class="rounded mapstyleshow pb-shadow"></div>
             <% if(currentUser) { %>
-                <h2 class="pb-col">Review PB's walk and food</h2>
+                <h2 class="pb-col fs-4 mb-3">Review PB's walk and food</h2>
                 <form action="/walks/<%=walk._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
-                    <div class="margb">
-                        <fieldset class="starability-basic m-0" required>
-                            <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="3"
-                                aria-label="No rating." />
-                            <input type="radio" id="first-rate1" name="review[rating]" value="1" />
-                            <label for="first-rate1" title="Terrible">1 star</label>
-                            <input type="radio" id="first-rate2" name="review[rating]" value="2" />
-                            <label for="first-rate2" title="Not good">2 stars</label>
-                            <input type="radio" id="first-rate3" name="review[rating]" value="3" checked />
-                            <label for="first-rate3" title="Average">3 stars</label>
-                            <input type="radio" id="first-rate4" name="review[rating]" value="4" />
-                            <label for="first-rate4" title="Very good">4 stars</label>
-                            <input type="radio" id="first-rate5" name="review[rating]" value="5" />
-                            <label for="first-rate5" title="Amazing">5 stars</label>
-                        </fieldset>
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center">
+                            <fieldset class="starability-basic m-0" required>
+                                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="3"
+                                    aria-label="No rating." />
+                                <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                                <label for="first-rate1" title="Terrible">1 star</label>
+                                <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                                <label for="first-rate2" title="Not good">2 stars</label>
+                                <input type="radio" id="first-rate3" name="review[rating]" value="3" checked />
+                                <label for="first-rate3" title="Average">3 stars</label>
+                                <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                                <label for="first-rate4" title="Very good">4 stars</label>
+                                <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                                <label for="first-rate5" title="Amazing">5 stars</label>
+                            </fieldset>
+                        </div>
                         <div class="valid-feedback">
                             Looking good! Nice rating...
                         </div>
                     </div>
                     <div class="mb-3">
-                        <!-- <label class="form-label text-muted" for="body">Review</label> -->
                         <textarea 
                             class="form-control form-input p-3 pb-shadow rounded" 
                             name="review[body]" 
@@ -109,43 +99,48 @@
                             rows="3" 
                             required
                         ></textarea>
-                        <div class="valid-feedback">
-                            Looking good! Nice review so far...
-                        </div>
+                        <div class="valid-feedback">Looking good! Nice review so far...</div>
                     </div>
                     <div class="d-grid justify-content-end">
-                        <button class="btn btn-outline-info pb-shadow" role="button">
+                        <button class="btn btn-outline-info pb-shadow shadow-transition" role="button">
                             <span>Leave Review</span>
                         </button>
                     </div>
                 </form>
             <% } %>
-            <% for(let review of walk.reviews.slice(0, 5)) { %>
-                <div class="card mb-3 pb-shadow">
-                    <div class="card-body">
-                        <p class="starability-result card-title" data-rating="<%= review.rating %>">
-                            Rated: <%= review.rating %>stars
-                        </p>
-                        <h6 class="card-subtitle mt-0 mb-1 text-muted">
-                            <i><%= walk.title %></i>
-                        </h6>
-                        <p class="card-text mb-1">
-                            <span class="text-muted"><%= review.author.username %>'s review: </span>
-                            <%= review.body %>
-                        </p>
-                        <% if ( currentUser && walk.author.equals(currentUser._id)) { %>
-                            <form action="/walks/<%= walk._id %>/reviews/<%=review._id%>?_method=DELETE"
-                                method="POST" class="d-grid justify-content-end mt-0">
-                                <button class="btn btn-sm btn-outline-danger">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </form>
-                        <% } %>
+
+            <!-- Reviews Display Stack -->
+            <div class="reviews-container">
+                <% for(let review of walk.reviews.slice(0, 5)) { %>
+                    <div class="card mb-3 pb-shadow">
+                        <div class="card-body">
+                            <!-- Standardized rating block layout to prevent text collision -->
+                            <div class="d-flex max-w-100 overflow-hidden mb-2">
+                                <p class="starability-result m-0" data-rating="<%= review.rating %>">
+                                    Rated: <%= review.rating %> stars
+                                </p>
+                            </div>
+                            <h6 class="card-subtitle mt-0 mb-2 text-muted">
+                                <i><%= walk.title %></i>
+                            </h6>
+                            <p class="card-text mb-1">
+                                <span class="text-muted bold"><%= review.author.username %>: </span>
+                                <%= review.body %>
+                            </p>
+                            <% if ( currentUser && walk.author.equals(currentUser._id)) { %>
+                                <form action="/walks/<%= walk._id %>/reviews/<%=review._id%>?_method=DELETE" method="POST" class="d-flex justify-content-end mt-2">
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </form>
+                            <% } %>
+                        </div>
                     </div>
-                </div>
-            <% } %>
+                <% } %>
+            </div>
         </div>
     </div>
+
     <div style="clear: both;"></div>
     <script>
         const mapToken = `<%- process.env.MAPBOX_TOKEN %>`; 

@@ -1,7 +1,10 @@
+:root {
+    --pb-col: #41533b;
+}
+
 body {
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
-    url("/images/background.webp");
+    min-height: 100vh; /* Changed from fixed height to prevent mobile text squishing */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url("/images/background.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,69 +12,91 @@ body {
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 }
 
+/* Landing Box Base System */
 .home {
+    min-height: 50vh;
     background-image: url("/images/landing.webp");
-    height: 90%;
     background-repeat: no-repeat;
-    background-size: 110%;
-    padding: 3rem;
-    padding-bottom: 0;
-    padding-top: 5rem;
-    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
-    box-shadow: 0 0 10px white inset, 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+    background-size: 120%; /* Swapped to cover to keep image scale sharp across devices */
+    background-position: center;
+    padding: 5rem 2rem; /* Increased top/bottom padding for vertical height */
+    min-height: 450px;
+    /* padding: 3rem 2rem; */
+    text-shadow: 2px 4px 3px rgba(68, 83, 59, 0.3);
+    box-shadow: 0 0 10px white inset, 0 2px 4px 0px rgba(68, 83, 59, 0.3);
 }
+
+/* Widths */
+.w25 {
+  width: 25vw;
+}
+.w50 {
+  width: 50vw;
+}
+.w55 {
+  width: 55vw;
+  margin: auto;
+}
+.w100 {
+  width: 100vw;
+}
+
+/* Text & Headings */
+.sub {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.lin-grad {
+    display: inline-block; /* Essential to prevent text-clipping bugs on mobile gradients */
+    background: -webkit-linear-gradient(white, whitesmoke, var(--pb-col), black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-bottom: 0.5rem;
+}
+
 .bold {
     font-weight: 550;
 }
-.thisway {
-    background-color: #41533b;
-    font-weight: 500;
-    box-shadow: 1px 2px 4px 0px rgba(00, 00, 25, 1);
+
+.pb-col {
+    color: var(--pb-col);
 }
+
+/* Call to Action Buttons */
+.thisway {
+    background-color: var(--pb-col);
+    font-weight: 500;
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 25, 1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
 .thisway:hover {
-    background-color: rgba(68, 83 , 59, 0.95);
-    /* transform: scale(0.98); */
+    background-color: rgba(68, 83, 59, 0.95);
     box-shadow: none;
 }
+
 .shadowy {
-    box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
+    box-shadow: 0 2px 4px 0px rgba(68, 83, 59, 0.3);
 }
+
 .shadowy:hover {
     box-shadow: none;
 }
+
 .bgt {
     background-color: transparent;
     border: none;
 }
-.lin-grad {
-    background: -webkit-linear-gradient(white, whitesmoke, #41533b, black);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding-bottom: 1rem;
-    background-clip: text;
-}
-.sub {
-    font-size: 3rem;
-}
-.pageone {
-    background-image: url("/images/english_sillhouette.webp");
-}
-.pb-col {
-    color: #41533b;
-}
+
 .notd {
     text-decoration: none;
     color: white;
-    text-shadow: 2px 4px 3px rgba(68, 83 , 59, 0.3);
-}
-.bold {
-    font-weight: 550;
-  }
-
-.cover-container {
-    max-width: 65vw;
+    text-shadow: 2px 4px 3px rgba(68, 83, 59, 0.3);
 }
 
+/* Navigation Elements */
 .nav-link {
     padding: 0.25rem;
     font-weight: 700;
@@ -81,19 +106,70 @@ body {
 }
 
 .nav-link:hover {
-    color: rgba(255,255,255,0.5);
-    border-bottom-color:rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.75);
+    border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
 .nav-link.active {
     color: white;
-    border-bottom-color:white;
+    border-bottom-color: white;
 }
 
-.btn-secondary, .btn-secondary:hover {
-    color: #333;
-    text-shadow: none;
+/* --- Responsive Media Query Tuning --- */
+
+/* Laptops & Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    body { background-size: 150%; }
 }
+
+/* Tablets (Portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body { background-size: 150%; }
+    .home { min-height: 65vh; }
+}
+
+/* Tablets (Landscape) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    body { background-size: 225%; }
+    .home { min-height: 65vh; }
+}
+
+/* Low-Res Tablets & Mobile Devices (Landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+    body { background-size: 225%; }
+    .home {
+        padding: 2rem 1.5rem;
+    }
+    .sub {
+        font-size: 2rem;
+    }
+}
+
+/* Mainstream Smartphones & Mobiles (Portrait) */
+@media (min-width: 320px) and (max-width: 480px) {
+    body {
+        background-size: 300%;
+    }
+    .home {
+        padding: 4rem 1rem; /* Better internal breathing room */
+        min-height: 380px;
+    }
+    .sub {
+        font-size: 1.85rem; /* Scales icons and header down gracefully */
+    }
+    .text-white {
+        font-size: 1.15rem;
+    }
+    .logsig {
+        margin-top: 1.5rem;
+    }
+    .thisway {
+        border-radius: 6px;
+        padding: 10px;
+        width: 75% !important; /* Makes it look robust and highly tappable on screens */
+    }
+}
+
 
 .glass-shadow {
     box-shadow:
@@ -102,89 +178,3 @@ body {
       inset -10px -10px 20px rgba(229, 253, 190, 0.1),
       inset -2px -2px 30px rgba(247, 255, 226, 0.2);
 }
-
-/* ##Device = Desktops */
-@media (min-width: 1281px) {
-  
-}
-
-/*  ##Device = Laptops, Desktops  */
-@media (min-width: 1025px) and (max-width: 1280px) {
-    body {
-        background-size: 150%;
-    }
-}
-
-/* ##Device = Tablets, Ipads (portrait)  */
-@media (min-width: 768px) and (max-width: 1024px) {
-    body {
-        background-size: 150%;
-    }
-    .home {
-        height: 80%;
-    }
-}
-
-/* ##Device = Tablets, Ipads (landscape)  */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    body {
-        background-size: 225%;
-    }
-    .home {
-        height: 100%;
-        background-size: 125%;
-    }
-}
-
-/* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
-@media (min-width: 481px) and (max-width: 767px) {
-    body {
-        background-size: 225%;
-    }
-    .home {
-        height: 50vh;
-        background-size: 125%;
-    }
-    .sub {
-        font-size: 1.5rem;
-    }
-}
-
-/*  ##Device = Most of the Smartphones Mobiles (Portrait) */
-@media (min-width: 320px) and (max-width: 480px) {
-    body {
-        background-size: 300%;
-    }
-    .home {
-        height: 69%;
-        background-size: 250%;
-        padding: 1rem auto;
-    }
-    .sub {
-        font-size: 1.40rem;
-        margin-top: -0.75rem;
-        margin-bottom: 3.5rem;
-    }
-    .text-white {
-        font-size: 1.05rem;
-    }
-    .logsig {
-        margin-top: 2rem;
-        height: 3rem;
-    }
-    .thisway {
-        border-radius: inherit;
-        padding: 8px;
-        margin-top: -4.5rem;
-    }
-}
-
-@media (min-width: 200px) and (max-width: 319px){
-    body {
-        background-size: 300%;
-    }
-    .home {
-        height: 40%;
-        background-size: 150%;
-    }
-} 

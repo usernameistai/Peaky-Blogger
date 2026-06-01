@@ -1,13 +1,22 @@
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-image: url("/images/background.webp");
-  background-size: 300%;
+  background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
 }
 
+/* Force container layout alignment fallback, ADDED */
+main {
+  flex: 1 0 auto;
+}
+
 footer {
   margin-top: auto;
+  position: relative !important;
+  width: 100%;
 }
 
 .starability-result {

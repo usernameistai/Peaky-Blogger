@@ -1,4 +1,4 @@
-<% layout('layouts/boilerplate') %>
+    <% layout('layouts/boilerplate') %>
 
     <div id="map" class="rounded mb-3 pb-shadow mapstyle"></div>
     
@@ -7,32 +7,44 @@
     
     <div>
         <% for(let walk of walks) { %>
-            <div class="card rounded mb-2 pb-shadow">
-                <div class="row g-0"> <div class="col-md-4">
+            <div class="card rounded mb-3 pb-shadow overflow-hidden"> <div class="row g-0"> 
+                    
+                    <div class="col-12 col-md-4">
                         <% if(walk.images?.length) { %>
-                            <img class="img-fluid rounded-start h-100 object-fit-cover" alt="<%= walk.title %>" src="<%= walk.images[0].thumbnail %>" loading="lazy">
-                        <% } else { %>
-                            <img class="img-fluid rounded-start h-100 object-fit-cover" src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" alt="Peak District Fallback" loading="lazy">
+                            <img class="img-fluid rounded-md-start-only w-100 h-100 object-fit-cover" 
+                                 alt="<%= walk.title %>" 
+                                 src="<%= walk.images[0].thumbnail %>" 
+                                 loading="lazy"
+                                 style="min-height: 200px; max-height: 250px;"> <% } else { %>
+                            <img class="img-fluid rounded-md-start-only w-100 h-100 object-fit-cover" 
+                                 src="https://media.istockphoto.com/id/840651604/photo/peak-district-sunset-with-heather.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q8aA8-VpaHJNtrLFuReokvfVsSbH7MgzBWvlIXaUJpA=" 
+                                 alt="Peak District Fallback" 
+                                 loading="lazy"
+                                 style="min-height: 200px; max-height: 250px;">
                         <% } %>
                     </div>
                     
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title pb-col">
-                                <i class="fas fa-tree"></i> <%= walk.title %> <i class="fas fa-utensils"></i>
-                            </h5>
+                    <div class="col-12 col-md-8">
+                        <div class="card-body h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h5 class="card-title pb-col bold">
+                                    <i class="fas fa-tree"></i> <%= walk.title %> <i class="fas fa-utensils"></i>
+                                </h5>
+                                
+                                <p class="card-text">
+                                    <%= walk.description ? walk.description.substring(0, 110) + '...' : 'No description provided.' %>
+                                </p>
+                                
+                                <p class="card-text">
+                                    <small class="text-muted"><i class="fa-solid fa-location-dot"></i> <%= walk.location %></small>
+                                </p>
+                            </div>
                             
-                            <p class="card-text">
-                                <%= walk.description ? walk.description.substring(0, 110) + '...' : 'No description provided.' %>
-                            </p>
-                            
-                            <p class="card-text">
-                                <small class="text-muted"><%= walk.location %></small>
-                            </p>
-                            
-                            <a class="btn btn-outline-info text-secondary pb-shadow" href="/walks/<%= walk._id %>">
-                                View <%= walk.title?.substring(0, 20) %>
-                            </a>
+                            <div class="mt-3">
+                                <a class="btn btn-outline-info text-secondary pb-shadow shadow-transition" href="/walks/<%= walk._id %>">
+                                    View <%= walk.title?.substring(0, 20) %>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     

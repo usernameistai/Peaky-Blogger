@@ -3,9 +3,12 @@ html {
 }
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-image: url("/images/background.webp");
   background-position: top;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 /* main {
   margin-bottom: 25vh;
@@ -22,9 +25,10 @@ button:hover {
   background-color: rgb(18, 156, 180);
 }
 footer {
-  /* margin-top: 150vh; */
-  position: absolute;
-  bottom: auto;
+  margin-top: auto;
+  position: relative !important;
+  /* bottom: auto; */
+  width: 100%;
 }
 .pb-col {
   color: #41533b;
@@ -38,11 +42,16 @@ footer {
 .pb-shadow {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
               rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .pb-inset-shadow {
   box-shadow: 0 0 15px whitesmoke inset,
               0px 15px 25px wheat,
               rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.shadow-transition:hover {
+  box-shadow: none !important; /* Removes shadow smoothly on hover to complete mechanical press sensation */
+  transform: translateY(1px);
 }
 .shadowy {
   box-shadow: 0 2px 4px 0px rgba(68, 83 , 59, 0.3);
@@ -80,15 +89,6 @@ footer {
 .sub {
   font-size: 3rem;
 }
-/* FROM GALLERY */
-/* .gallery {
-  display: flex;
-  width: 32.914%;
-}
-.gallerytop {
-  border-top-left-radius: 5px 5px;
-  border-top-right-radius: 5px 5px;
-} */
 .onh:hover {
   color: rgb(27, 121, 214);
 }
@@ -125,7 +125,7 @@ footer {
 }
 .mapstyleshow {
   width: 100%; 
-  height: 33%;
+  height: 300px;
   margin-bottom: 0.75rem;
 }
 
@@ -187,6 +187,13 @@ footer {
   
 }
 
+/* --- Responsive Breakpoint Overrides --- */
+@media (max-width: 991px) {
+  .mapstyleshow {
+      height: 250px; /* Scales map container height down nicely on mobile phones */
+  }
+}
+
 /* ##Device = Low Resolution Tablets, Mobiles (Landscape) */
 @media (min-width: 481px) and (max-width: 767px) {
   
@@ -225,7 +232,7 @@ footer {
   }
   footer{
       /* display: grid; */
-      padding-top: 10px;
+      padding-top: 15px;
       margin-top: auto;
   }
   .n50 {

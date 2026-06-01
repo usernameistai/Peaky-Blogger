@@ -3,11 +3,19 @@
 
     <div id="map" class="rounded mb-3 pb-shadow mapstyleh" ></div>
 
-    <div class="d-flex mgt">
-        <a class="bold notd btn btn-outline-info pb-col mx-auto pb-shadow" href="/homehub">PeakyBlogger's Homehub</a>
-        <a class="bold notd btn btn-outline-info pb-col mx-auto pb-shadow" href="/walks">All Walks</a>
-        <a class="bold notd btn btn-outline-info pb-col mx-auto pb-shadow" href="/contact">Contact PeakyBlogger</a>
-    </div>
+    <section>
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 my-4 px-2">
+            <a class="bold notd btn btn-info pb-col text-secondary w-100 w-md-auto py-2 pb-shadow shadowy bgt" href="/homehub">
+                PeakyBlogger's Homehub
+            </a>
+            <a class="bold notd btn btn-info pb-col text-secondary w-100 w-md-auto py-2 pb-shadow shadowy bgt" href="/walks">
+                All Walks
+            </a>
+            <a class="bold notd btn btn-info pb-col text-secondary w-100 w-md-auto py-2 pb-shadow shadowy bgt" href="/contact">
+                Contact PeakyBlogger
+            </a>
+        </div>
+    </section>
 
     <script>
         const mapToken = `<%- process.env.MAPBOX_TOKEN %>`; 
