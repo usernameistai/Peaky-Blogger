@@ -3,7 +3,7 @@
 }
 
 body {
-    min-height: 100vh; /* Changed from fixed height to prevent mobile text squishing */
+    min-height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url("/images/background.webp");
     background-size: cover;
     background-position: center;
@@ -12,16 +12,13 @@ body {
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 }
 
-/* Landing Box Base System */
 .home {
-    min-height: 50vh;
     background-image: url("/images/landing.webp");
     background-repeat: no-repeat;
-    background-size: 120%; /* Swapped to cover to keep image scale sharp across devices */
-    background-position: center;
-    padding: 5rem 2rem; /* Increased top/bottom padding for vertical height */
-    min-height: 450px;
-    /* padding: 3rem 2rem; */
+    background-size: 115%; 
+    background-position: center bottom;
+    width: 100%; 
+    padding: 5rem 2rem;
     text-shadow: 2px 4px 3px rgba(68, 83, 59, 0.3);
     box-shadow: 0 0 10px white inset, 0 2px 4px 0px rgba(68, 83, 59, 0.3);
 }
@@ -57,7 +54,7 @@ body {
 }
 
 .bold {
-    font-weight: 550;
+    font-weight: 700;
 }
 
 .pb-col {
@@ -70,6 +67,7 @@ body {
     font-weight: 500;
     box-shadow: 1px 2px 4px 0px rgba(0, 0, 25, 1);
     transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 25%;
 }
 
 .thisway:hover {
@@ -134,11 +132,23 @@ body {
     .home { min-height: 65vh; }
 }
 
+@media (min-width: 768px) {
+    .home {
+        min-width: 600px;
+        min-height: 280px;
+        
+        padding: 5rem 3rem;
+        background-size: 115% 115%;
+    }
+}
+
 /* Low-Res Tablets & Mobile Devices (Landscape) */
 @media (min-width: 481px) and (max-width: 767px) {
     body { background-size: 225%; }
     .home {
         padding: 2rem 1.5rem;
+        margin: auto;
+        background-size: cover;
     }
     .sub {
         font-size: 2rem;
@@ -151,11 +161,12 @@ body {
         background-size: 300%;
     }
     .home {
-        padding: 4rem 1rem; /* Better internal breathing room */
-        min-height: 380px;
+        padding: 4rem 1rem; 
+        min-height: 350px;
+        background-size: cover;
     }
     .sub {
-        font-size: 1.85rem; /* Scales icons and header down gracefully */
+        font-size: 1.85rem;
     }
     .text-white {
         font-size: 1.15rem;
@@ -166,7 +177,7 @@ body {
     .thisway {
         border-radius: 6px;
         padding: 10px;
-        width: 75% !important; /* Makes it look robust and highly tappable on screens */
+        width: 75% !important;
     }
 }
 
